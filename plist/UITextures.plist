@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MainScreen.png</key>
+	<string>MainScreen.png</string>
+	<key>SPScreen.png</key>
+	<string>SPScreen.png</string>
+	<key>ButtonUp.png</key>
+	<string>ButtonUp.png</string>
+	<key>ButtonDown.png</key>
+	<string>ButtonDown.png</string>
+	<key>PPBacking.png</key>
+	<string>PPBacking.png</string>
+	<key>PieceBase.png</key>
+	<string>PieceBase.png</string>
+	<key>DialogBacking.png</key>
+	<string>DialogBacking.png</string>
+	<key>BackButtonDown.png</key>
+	<string>BackButtonDown.png</string>
+	<key>BackButtonUp.png</key>
+	<string>BackButtonUp.png</string>
+	<key>ResetButtonDown.png</key>
+	<string>ResetButtonDown.png</string>
+	<key>ResetButtonUp.png</key>
+	<string>ResetButtonUp.png</string>
+	<key>ScrollUp.png</key>
+	<string>ScrollUp.png</string>
+	<key>ScrollDown.png</key>
+	<string>ScrollDown.png</string>
+	<key>Background.png</key>
+	<string>Background.png</string>
+	<key>ButtonMute.png</key>
+	<string>ButtonMute.png</string>
+	<key>ButtonUnmute.png</key>
+	<string>ButtonUnmute.png</string>
+</dict>
+</plist>

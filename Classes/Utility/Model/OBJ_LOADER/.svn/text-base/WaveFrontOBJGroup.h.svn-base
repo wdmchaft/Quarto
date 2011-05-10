@@ -1,0 +1,88 @@
+//
+//  WaveFrontOBJGroup.h
+//  OpenGLBricks
+//
+//  Created by Bill Dudney on 12/20/08.
+//  Copyright 2008 Gala Factory Software LLC. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "WaveFrontOBJTypes.h"
+//#import "glUtility.h"
+
+@class WaveFrontOBJMaterial;
+
+@interface WaveFrontOBJGroup : NSObject {
+	NSArray *names;
+	// we store the data in NSData objects so we can push out the whole
+	// stream of bytes at once to the card
+	NSMutableData *vertexIndexData;
+	NSMutableData *normalsIndexData;
+	NSMutableData *textureCoordinatesIndexData;
+	WaveFrontOBJMaterial *material;
+	BOOL smoothing;
+	GLuint indexesName;
+	
+	NSMutableData *vertexData;
+	GLuint verticesName;
+	NSMutableData *normalsData;
+	GLuint normalsName;
+	NSMutableData *texCoordsData;
+	CFMutableArrayRef texCoords;
+	GLuint textureCoordsName;
+	
+	GLuint		vboName; 
+	glVBOParam	vboParam;
+	GLuint		instanceIDCount;
+	
+	char *vboData;
+	void *sortedIndexData;
+	
+	NSMutableDictionary	*instanceVBOs;
+	
+	int faceCount;
+}
+
+@property(assign) BOOL smoothing;
+@property(retain) NSArray *names;
+@property(retain) NSData *vertexIndexData;
+@property(readonly) NSData *normalsIndexData;
+@property(readonly) NSData *textureCoordinatesIndexData;
+@property(retain) WaveFrontOBJMaterial *material;
+
+// this loads the data via glBindBuffer if its not already bound
+// if the index is already bound, usage is ignored
+- (GLuint)indexesName:(GLenum)usage; // the VBO for the indexes
+//- (GLuint)verticesName:(GLenum)usage; // the VBO for the vertices
+//- (GLuint)normalsName:(GLenum)usage; // the VBO for the normals
+//- (GLuint)textureCoordinatesName:(GLenum)usage; // the VBO for the normals
+
+- (GLuint)indexCount;
+- (GLuint)texCoordSize; // 1, 2, 3 or 4D textures
+
+- (void)addVertex:(Vector3D)vertex atIndex:(GLshort)index;
+- (void)addNormal:(Vector3D)normal atIndex:(GLshort)index;
+- (void)addTexCoord:(Vector2D)coord atIndex:(GLshort)index;
+
+- (void)addVertexIndex:(GLshort)index;
+- (void)addNormalIndex:(GLshort)index;
+- (void)addTextureCoordinateIndex:(GLshort)index;
+
+- (void)addVertex:(Vector3D)vertex;
+- (void)addNormal:(Vector3D)normal;
+- (void)addTextureCoordinate:(Vector2D)coord;
+
+
+//Creation of a vbo instance with a specific transformation
+-(void)releaseVBOWithID:(GLuint)instanceID;
+-(void)releaseAllInstances;
+-(GLuint)vboNameForInstance:(GLuint)instanceID;
+-(void)createTransformedVBOwithID:(GLuint)instanceID translation:(Vector3D)translation rotate:(Vector3D)rotation;
+-(int)faceCount;
+
+
+- (GLuint)vboName:(GLenum)usage;
+- (glVBOParam)vboParam;
+
+
+@end

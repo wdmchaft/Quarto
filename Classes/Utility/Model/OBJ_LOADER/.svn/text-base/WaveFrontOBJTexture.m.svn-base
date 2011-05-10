@@ -1,0 +1,88 @@
+//
+//  WaveFrontOBJTexture.m
+//  OpenGLBricks
+//
+//  Created by Bill Dudney on 12/20/08.
+//  Copyright 2008 Gala Factory Software LLC. All rights reserved.
+//
+
+#import "WaveFrontOBJTexture.h"
+#import "Texture2D.h"
+#import "PVRTexture.h"
+#import "vrTexturePool.h"
+
+@implementation WaveFrontOBJTexture
+
+@synthesize name;
+@synthesize textureName;
+@synthesize uOffset;
+@synthesize vOffset;
+@synthesize uSize;
+@synthesize vSize;
+
+- (GLuint)textureName {
+	if(0 == textureName) {
+		vrTexturePool *texturePool = [vrTexturePool sharedvrTexturePool];
+		
+		
+		//Texture Atlas Support.  Checks the texturePool atlas refs to see if the filename
+		//is located in an atlas and grabs the atlas and corresponding UV offsets
+		
+		if([texturePool isTextureInAtlas:self.name]==TRUE){
+			//NSLog(@"Texture %@ Found in an Atlas",self.name);
+			isAtlas = TRUE;
+			
+			texture = [texturePool atlasForTexture:self.name];
+			NSDictionary *atlasInfo = [texturePool atlasInfoForTexture:self.name];
+			
+			self.uOffset	= [[atlasInfo objectForKey:@"uoffset"] floatValue];
+			self.vOffset	= [[atlasInfo objectForKey:@"voffset"] floatValue];
+			self.uSize		= [[atlasInfo objectForKey:@"usize"] floatValue];
+			self.vSize		= [[atlasInfo objectForKey:@"vsize"] floatValue];
+			
+			//NSLog(@"   Offsets:(%1.2f,%1.2f)  Size:(%1.2f,%1.2f)",uOffset,vOffset,uSize,vSize);
+			textureName = texture.name;
+			texture = NULL;
+			return textureName;
+			
+		}
+		
+		texture = [texturePool objectForKey:self.name];
+		if(texture){
+			textureName = texture.name;
+			texture = NULL;
+		}
+		else{
+			NSArray *fnameparts	= [self.name componentsSeparatedByString:@"."];
+			if([[fnameparts lastObject] isEqualToString:@"pvrtc"]){
+				NSString *path = [[NSBundle mainBundle] pathForResource:self.name ofType:nil];
+				texture = [[Texture2D alloc] initPRVTextureWithPath:path];
+			}
+			else{
+				texture = [[Texture2D alloc] initWithImagePath:self.name];
+			}
+			textureName = texture.name;
+			//TODO: It may be a slight optimization to add this texture to the pool,
+			//      but with everything in atlasses, it is highly unlikely that
+			//      two models will share the same texture...
+			
+			//[texturePool addTexture:texture withKey:self.name];
+			//[texture release];
+		}
+	}		
+	return textureName;
+}
+
+-(BOOL)isAtlas{
+	return isAtlas;
+}
+
+-(void)dealloc {
+	//if(textureName)glDeleteTextures(1, &textureName);
+	[texture release];
+	[name release];
+	[channel release];
+	[super dealloc];
+};
+
+@end

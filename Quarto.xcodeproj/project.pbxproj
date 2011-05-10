@@ -1,0 +1,1225 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* QuartoAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* QuartoAppDelegate.mm */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2514C27B10084DCA00A42282 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2514C27910084DCA00A42282 /* Shader.fsh */; };
+		2514C27C10084DCA00A42282 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2514C27A10084DCA00A42282 /* Shader.vsh */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28FD14FE0DC6FC130079059D /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28FD14FD0DC6FC130079059D /* EAGLView.mm */; };
+		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
+		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		AB0ACC1F1260FD97007524FA /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0ACC1E1260FD97007524FA /* Background.png */; };
+		AB0ACC2D1260FDF5007524FA /* iPadLS.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0ACC2C1260FDF5007524FA /* iPadLS.png */; };
+		AB0ACCFE1261189C007524FA /* qrInstructionsScreen.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB0ACCFD1261189C007524FA /* qrInstructionsScreen.mm */; };
+		AB0ACD0612611CC4007524FA /* Instructions.txt in Resources */ = {isa = PBXBuildFile; fileRef = AB0ACD0512611CC4007524FA /* Instructions.txt */; };
+		AB105CA1124D1D2400B1A777 /* qrAppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB105CA0124D1D2400B1A777 /* qrAppController.mm */; };
+		AB105E37124D566E00B1A777 /* QuartoBoard.png in Resources */ = {isa = PBXBuildFile; fileRef = AB105E36124D566E00B1A777 /* QuartoBoard.png */; };
+		AB105F74124D94D100B1A777 /* qrGeometryGlobals.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB105F73124D94D100B1A777 /* qrGeometryGlobals.mm */; };
+		AB172B54126243370010F00D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AB172B53126243370010F00D /* Default.png */; };
+		AB1C6A6B124E6BF00046A796 /* qrPiecePickerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB1C6A6A124E6BF00046A796 /* qrPiecePickerView.mm */; };
+		AB1C6A6E124E6D560046A796 /* qrOrthoView.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB1C6A6D124E6D560046A796 /* qrOrthoView.mm */; };
+		AB1C6A75124E75670046A796 /* qrPieceView.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB1C6A74124E75670046A796 /* qrPieceView.mm */; };
+		AB1C6A89124E977C0046A796 /* qrGameScreen.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB1C6A88124E977C0046A796 /* qrGameScreen.mm */; };
+		AB307B3E1252786400E9ABB6 /* qrGameState.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB307B3D1252786400E9ABB6 /* qrGameState.mm */; };
+		AB307BC51252998800E9ABB6 /* qrHomeScreen.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB307BC41252998800E9ABB6 /* qrHomeScreen.mm */; };
+		AB307CA51252BD9400E9ABB6 /* qrAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB307CA41252BD9400E9ABB6 /* qrAnimation.mm */; };
+		AB38ECFB12638D440025A306 /* QuartoPieces2.png in Resources */ = {isa = PBXBuildFile; fileRef = AB38ECFA12638D440025A306 /* QuartoPieces2.png */; };
+		AB38ED68126394780025A306 /* board.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38ED67126394780025A306 /* board.vrm */; };
+		AB38EF3A1263D7420025A306 /* p0000.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF2A1263D7420025A306 /* p0000.vrm */; };
+		AB38EF3B1263D7420025A306 /* p0001.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF2B1263D7420025A306 /* p0001.vrm */; };
+		AB38EF3C1263D7420025A306 /* p0010.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF2C1263D7420025A306 /* p0010.vrm */; };
+		AB38EF3D1263D7420025A306 /* p0011.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF2D1263D7420025A306 /* p0011.vrm */; };
+		AB38EF3E1263D7420025A306 /* p0100.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF2E1263D7420025A306 /* p0100.vrm */; };
+		AB38EF3F1263D7420025A306 /* p0101.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF2F1263D7420025A306 /* p0101.vrm */; };
+		AB38EF401263D7420025A306 /* p0110.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF301263D7420025A306 /* p0110.vrm */; };
+		AB38EF411263D7420025A306 /* p0111.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF311263D7420025A306 /* p0111.vrm */; };
+		AB38EF421263D7420025A306 /* p1000.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF321263D7420025A306 /* p1000.vrm */; };
+		AB38EF431263D7420025A306 /* p1001.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF331263D7420025A306 /* p1001.vrm */; };
+		AB38EF441263D7420025A306 /* p1010.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF341263D7420025A306 /* p1010.vrm */; };
+		AB38EF451263D7420025A306 /* p1011.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF351263D7420025A306 /* p1011.vrm */; };
+		AB38EF461263D7420025A306 /* p1100.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF361263D7420025A306 /* p1100.vrm */; };
+		AB38EF471263D7420025A306 /* p1101.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF371263D7420025A306 /* p1101.vrm */; };
+		AB38EF481263D7420025A306 /* p1110.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF381263D7420025A306 /* p1110.vrm */; };
+		AB38EF491263D7420025A306 /* p1111.vrm in Resources */ = {isa = PBXBuildFile; fileRef = AB38EF391263D7420025A306 /* p1111.vrm */; };
+		AB38F0521264F0DD0025A306 /* sound61.wav in Resources */ = {isa = PBXBuildFile; fileRef = AB38F0501264F0DD0025A306 /* sound61.wav */; };
+		AB38F0571264F20B0025A306 /* ButtonMute.png in Resources */ = {isa = PBXBuildFile; fileRef = AB38F0551264F20B0025A306 /* ButtonMute.png */; };
+		AB38F0581264F20B0025A306 /* ButtonUnmute.png in Resources */ = {isa = PBXBuildFile; fileRef = AB38F0561264F20B0025A306 /* ButtonUnmute.png */; };
+		AB38F06B1264F4C20025A306 /* click_2.wav.caf in Resources */ = {isa = PBXBuildFile; fileRef = AB38F06A1264F4C20025A306 /* click_2.wav.caf */; };
+		AB38F09C126503A70025A306 /* chimes.caf in Resources */ = {isa = PBXBuildFile; fileRef = AB38F09B126503A70025A306 /* chimes.caf */; };
+		AB38F09E1265042C0025A306 /* sound84.wav in Resources */ = {isa = PBXBuildFile; fileRef = AB38F09D1265042C0025A306 /* sound84.wav */; };
+		AB38F0DD12650D0F0025A306 /* Quarto_Icon_114px.png in Resources */ = {isa = PBXBuildFile; fileRef = AB38F0DC12650D0F0025A306 /* Quarto_Icon_114px.png */; };
+		AB38F0F112650F820025A306 /* Icon-54.png in Resources */ = {isa = PBXBuildFile; fileRef = AB38F0EF12650F820025A306 /* Icon-54.png */; };
+		AB38F0F212650F820025A306 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = AB38F0F012650F820025A306 /* Icon-72.png */; };
+		AB38F20B126546230025A306 /* MainScreen_small.png in Resources */ = {isa = PBXBuildFile; fileRef = AB38F20A126546230025A306 /* MainScreen_small.png */; };
+		AB38F20D1265467F0025A306 /* SPScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = AB38F20C1265467F0025A306 /* SPScreen.png */; };
+		AB38F210126547A80025A306 /* QuartoPieces2_small.png in Resources */ = {isa = PBXBuildFile; fileRef = AB38F20F126547A80025A306 /* QuartoPieces2_small.png */; };
+		AB38F211126548140025A306 /* sound88.wav in Resources */ = {isa = PBXBuildFile; fileRef = AB38F0511264F0DD0025A306 /* sound88.wav */; };
+		AB38F2C8126637070025A306 /* DialogBacking_small.png in Resources */ = {isa = PBXBuildFile; fileRef = AB38F2C7126637070025A306 /* DialogBacking_small.png */; };
+		AB3C6CED124C3C44007D8C4A /* qrBoardRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6CEC124C3C44007D8C4A /* qrBoardRenderer.mm */; };
+		AB3C6CF2124C3C51007D8C4A /* qrPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6CF1124C3C51007D8C4A /* qrPlayer.m */; };
+		AB3C6CF7124C3C5E007D8C4A /* qrAIPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6CF6124C3C5E007D8C4A /* qrAIPlayer.mm */; };
+		AB3C6CFC124C3C6F007D8C4A /* qrBoardState.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6CFB124C3C6F007D8C4A /* qrBoardState.mm */; };
+		AB3C6CFF124C3C96007D8C4A /* qrBoard.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6CFE124C3C96007D8C4A /* qrBoard.mm */; };
+		AB3C6D07124C3CB1007D8C4A /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D02124C3CB1007D8C4A /* SoundEffect.m */; };
+		AB3C6D09124C3CB1007D8C4A /* vrAudioManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D06124C3CB1007D8C4A /* vrAudioManager.mm */; };
+		AB3C6D0F124C3CC1007D8C4A /* glTextManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D0C124C3CC1007D8C4A /* glTextManager.mm */; };
+		AB3C6D10124C3CC1007D8C4A /* vrFont.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D0E124C3CC1007D8C4A /* vrFont.m */; };
+		AB3C6D20124C3CC8007D8C4A /* WaveFrontOBJGroup.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D14124C3CC8007D8C4A /* WaveFrontOBJGroup.mm */; };
+		AB3C6D21124C3CC8007D8C4A /* WaveFrontOBJMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D16124C3CC8007D8C4A /* WaveFrontOBJMaterial.m */; };
+		AB3C6D22124C3CC8007D8C4A /* WaveFrontOBJScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D18124C3CC8007D8C4A /* WaveFrontOBJScene.m */; };
+		AB3C6D23124C3CC8007D8C4A /* WaveFrontOBJTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D1A124C3CC8007D8C4A /* WaveFrontOBJTexture.m */; };
+		AB3C6D24124C3CC8007D8C4A /* vr3DModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D1D124C3CC8007D8C4A /* vr3DModel.mm */; };
+		AB3C6D25124C3CC8007D8C4A /* vrModelPool.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D1F124C3CC8007D8C4A /* vrModelPool.mm */; };
+		AB3C6D59124C3CEE007D8C4A /* UIDevice+machine.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D57124C3CEE007D8C4A /* UIDevice+machine.mm */; };
+		AB3C6D6A124C3F2B007D8C4A /* vrCollisionNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D67124C3F2B007D8C4A /* vrCollisionNode.mm */; };
+		AB3C6D6B124C3F2B007D8C4A /* vrPlaneCNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D69124C3F2B007D8C4A /* vrPlaneCNode.mm */; };
+		AB3C6D78124C3FA3007D8C4A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3C6D77124C3FA3007D8C4A /* AudioToolbox.framework */; };
+		AB3C6D84124C4094007D8C4A /* PVRTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D7F124C4094007D8C4A /* PVRTexture.m */; };
+		AB3C6D85124C4094007D8C4A /* Texture2D.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D81124C4094007D8C4A /* Texture2D.mm */; };
+		AB3C6D86124C4094007D8C4A /* vrTexturePool.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D83124C4094007D8C4A /* vrTexturePool.mm */; };
+		AB3C6D89124C40ED007D8C4A /* glUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D88124C40ED007D8C4A /* glUtility.mm */; };
+		AB3C6D96124C42A7007D8C4A /* NSString+ordinal.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D91124C42A7007D8C4A /* NSString+ordinal.m */; };
+		AB3C6D97124C42A7007D8C4A /* NSString+timeString.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D93124C42A7007D8C4A /* NSString+timeString.m */; };
+		AB3C6D98124C42A7007D8C4A /* NSString+vectorParse.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6D95124C42A7007D8C4A /* NSString+vectorParse.mm */; };
+		AB3C6D9C124C42D1007D8C4A /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3C6D9B124C42D1007D8C4A /* OpenAL.framework */; };
+		AB3C6DA6124C4329007D8C4A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3C6DA5124C4329007D8C4A /* AVFoundation.framework */; };
+		AB3C6DAA124C4333007D8C4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3C6DA9124C4333007D8C4A /* CoreGraphics.framework */; };
+		AB3C6DB1124C439D007D8C4A /* qrPiece.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3C6DB0124C439D007D8C4A /* qrPiece.mm */; };
+		AB56FC441253E940001F8FC8 /* qrGameTextureController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB56FC431253E940001F8FC8 /* qrGameTextureController.m */; };
+		AB56FC541254ED30001F8FC8 /* MainScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = AB56FC531254ED30001F8FC8 /* MainScreen.png */; };
+		AB56FE1E12553555001F8FC8 /* qrScreen.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB56FE1D12553555001F8FC8 /* qrScreen.mm */; };
+		AB56FE1F125539C3001F8FC8 /* vrModalDialog.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABDCF9E212511E1900A23E02 /* vrModalDialog.mm */; };
+		AB56FE2212553ACF001F8FC8 /* qrViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB56FE2112553ACF001F8FC8 /* qrViewController.mm */; };
+		AB56FE9212555085001F8FC8 /* qrSinglePlayerGameScreen.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB56FE9112555085001F8FC8 /* qrSinglePlayerGameScreen.mm */; };
+		AB56FE95125552D4001F8FC8 /* vrTransitionHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB56FE94125552D4001F8FC8 /* vrTransitionHandler.mm */; };
+		AB6291D91379ABE30070AC60 /* Matrix.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB6291C61379ABE30070AC60 /* Matrix.mm */; };
+		AB6291DA1379ABE30070AC60 /* neon_matrix_impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB6291C91379ABE30070AC60 /* neon_matrix_impl.mm */; };
+		AB6291DC1379ABE30070AC60 /* Transform.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB6291CE1379ABE30070AC60 /* Transform.mm */; };
+		AB6291DD1379ABE30070AC60 /* Vector.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB6291D01379ABE30070AC60 /* Vector.mm */; };
+		AB6291DE1379ABE30070AC60 /* matrix_impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB6291D41379ABE30070AC60 /* matrix_impl.mm */; };
+		AB6291DF1379ABE30070AC60 /* utility_impl.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB6291D61379ABE30070AC60 /* utility_impl.mm */; };
+		AB6291E11379AD860070AC60 /* SoundEffects.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB6291E01379AD860070AC60 /* SoundEffects.plist */; };
+		AB6291E61379AD9C0070AC60 /* SharedTextures_small.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB6291E41379AD9C0070AC60 /* SharedTextures_small.plist */; };
+		AB6291E71379AD9C0070AC60 /* SharedTextures.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB6291E51379AD9C0070AC60 /* SharedTextures.plist */; };
+		AB6291EA1379ADAC0070AC60 /* UILayout_ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB6291E81379ADAC0070AC60 /* UILayout_ipad.plist */; };
+		AB6291EB1379ADAC0070AC60 /* UILayout_iphone.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB6291E91379ADAC0070AC60 /* UILayout_iphone.plist */; };
+		AB6291ED1379ADF20070AC60 /* Quarto-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB6291EC1379ADF20070AC60 /* Quarto-Info.plist */; };
+		AB6291F01379AE0A0070AC60 /* UITextures_small.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB6291EE1379AE0A0070AC60 /* UITextures_small.plist */; };
+		AB6291F11379AE0A0070AC60 /* UITextures.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB6291EF1379AE0A0070AC60 /* UITextures.plist */; };
+		AB8AB4171257F79D00D33F8B /* SPScreen_small.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8AB4161257F79D00D33F8B /* SPScreen_small.png */; };
+		AB8AB5211259047800D33F8B /* ButtonDown.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8AB51F1259047800D33F8B /* ButtonDown.png */; };
+		AB8AB5221259047800D33F8B /* ButtonUp.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8AB5201259047800D33F8B /* ButtonUp.png */; };
+		AB8AB5D5125A39C200D33F8B /* PPBacking.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8AB5D4125A39C200D33F8B /* PPBacking.png */; };
+		AB8AB638125A404800D33F8B /* PieceBase.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8AB637125A404800D33F8B /* PieceBase.png */; };
+		AB8AB642125A443600D33F8B /* qrMultiPlayerSessonController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB8AB641125A443600D33F8B /* qrMultiPlayerSessonController.mm */; };
+		AB8AB654125A450900D33F8B /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8AB653125A450900D33F8B /* GameKit.framework */; };
+		AB8AB65A125A481C00D33F8B /* qrMPGameScreen.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB8AB659125A481C00D33F8B /* qrMPGameScreen.mm */; };
+		AB8AB82B125A960A00D33F8B /* qrNetworkMove.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB8AB82A125A960A00D33F8B /* qrNetworkMove.mm */; };
+		AB8AB9F5125BC18C00D33F8B /* DialogBacking.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8AB9F4125BC18C00D33F8B /* DialogBacking.png */; };
+		AB8ABB18125C65A100D33F8B /* BackButtonDown.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ABB16125C65A100D33F8B /* BackButtonDown.png */; };
+		AB8ABB19125C65A100D33F8B /* BackButtonUp.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ABB17125C65A100D33F8B /* BackButtonUp.png */; };
+		AB8ABB39125CF02400D33F8B /* TempusLarge.ini in Resources */ = {isa = PBXBuildFile; fileRef = AB8ABB38125CF02400D33F8B /* TempusLarge.ini */; };
+		AB8ABB54125CFEBA00D33F8B /* ResetButtonDown.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ABB52125CFEBA00D33F8B /* ResetButtonDown.png */; };
+		AB8ABB55125CFEBA00D33F8B /* ResetButtonUp.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ABB53125CFEBA00D33F8B /* ResetButtonUp.png */; };
+		AB8ABB6A125D0A3000D33F8B /* TempusLarge_tweaked_512.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ABB69125D0A3000D33F8B /* TempusLarge_tweaked_512.png */; };
+		AB8ABB88125D0F7500D33F8B /* qrGameStats.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABB87125D0F7500D33F8B /* qrGameStats.mm */; };
+		AB8ABBB9125D525600D33F8B /* qrStatsScreen.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB8ABBB8125D525600D33F8B /* qrStatsScreen.mm */; };
+		AB8ABC8C125E494400D33F8B /* ScrollDown.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ABC8A125E494400D33F8B /* ScrollDown.png */; };
+		AB8ABC8D125E494400D33F8B /* ScrollUp.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8ABC8B125E494400D33F8B /* ScrollUp.png */; };
+		ABDCF8F51251054300A23E02 /* vrButton.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABDCF8F01251054300A23E02 /* vrButton.mm */; };
+		ABDCF8F61251054300A23E02 /* vrControl.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABDCF8F21251054300A23E02 /* vrControl.mm */; };
+		ABDCF8F71251054300A23E02 /* vrUIControl.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABDCF8F41251054300A23E02 /* vrUIControl.mm */; };
+		ABDCF9EB12511E1900A23E02 /* vrTextBox.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABDCF9E312511E1900A23E02 /* vrTextBox.mm */; };
+		ABDCF9EC12511E1900A23E02 /* vrSliderControl.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABDCF9E712511E1900A23E02 /* vrSliderControl.mm */; };
+		ABDCFA0012511E7700A23E02 /* vrUIElement.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABDCF9FE12511E7700A23E02 /* vrUIElement.mm */; };
+		ABDCFA151251427400A23E02 /* qrAIMove.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABDCFA141251427400A23E02 /* qrAIMove.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* QuartoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartoAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* QuartoAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = QuartoAppDelegate.mm; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Quarto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quarto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2514C27910084DCA00A42282 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		2514C27A10084DCA00A42282 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28FD14FC0DC6FC130079059D /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		28FD14FD0DC6FC130079059D /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
+		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Quarto_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quarto_Prefix.pch; sourceTree = "<group>"; };
+		AB0ACC1E1260FD97007524FA /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Background.png; path = UITextures/Background.png; sourceTree = "<group>"; };
+		AB0ACC2C1260FDF5007524FA /* iPadLS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPadLS.png; path = LoadingScreens/iPadLS.png; sourceTree = "<group>"; };
+		AB0ACCFC1261189C007524FA /* qrInstructionsScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrInstructionsScreen.h; sourceTree = "<group>"; };
+		AB0ACCFD1261189C007524FA /* qrInstructionsScreen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrInstructionsScreen.mm; sourceTree = "<group>"; };
+		AB0ACD0512611CC4007524FA /* Instructions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Instructions.txt; sourceTree = "<group>"; };
+		AB105C9F124D1D2400B1A777 /* qrAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrAppController.h; sourceTree = "<group>"; };
+		AB105CA0124D1D2400B1A777 /* qrAppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrAppController.mm; sourceTree = "<group>"; };
+		AB105E36124D566E00B1A777 /* QuartoBoard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QuartoBoard.png; path = Models/Textures/Modified/QuartoBoard.png; sourceTree = "<group>"; };
+		AB105F72124D94D100B1A777 /* qrGeometryGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrGeometryGlobals.h; sourceTree = "<group>"; };
+		AB105F73124D94D100B1A777 /* qrGeometryGlobals.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrGeometryGlobals.mm; sourceTree = "<group>"; };
+		AB172B53126243370010F00D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = LoadingScreens/Default.png; sourceTree = "<group>"; };
+		AB1C6A69124E6BF00046A796 /* qrPiecePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrPiecePickerView.h; sourceTree = "<group>"; };
+		AB1C6A6A124E6BF00046A796 /* qrPiecePickerView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrPiecePickerView.mm; sourceTree = "<group>"; };
+		AB1C6A6C124E6D560046A796 /* qrOrthoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrOrthoView.h; sourceTree = "<group>"; };
+		AB1C6A6D124E6D560046A796 /* qrOrthoView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrOrthoView.mm; sourceTree = "<group>"; };
+		AB1C6A73124E75670046A796 /* qrPieceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrPieceView.h; sourceTree = "<group>"; };
+		AB1C6A74124E75670046A796 /* qrPieceView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrPieceView.mm; sourceTree = "<group>"; };
+		AB1C6A87124E977C0046A796 /* qrGameScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrGameScreen.h; sourceTree = "<group>"; };
+		AB1C6A88124E977C0046A796 /* qrGameScreen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrGameScreen.mm; sourceTree = "<group>"; };
+		AB307B3A1252782300E9ABB6 /* qrTypeDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrTypeDefs.h; sourceTree = "<group>"; };
+		AB307B3C1252786400E9ABB6 /* qrGameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrGameState.h; sourceTree = "<group>"; };
+		AB307B3D1252786400E9ABB6 /* qrGameState.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrGameState.mm; sourceTree = "<group>"; };
+		AB307BC31252998800E9ABB6 /* qrHomeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrHomeScreen.h; sourceTree = "<group>"; };
+		AB307BC41252998800E9ABB6 /* qrHomeScreen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrHomeScreen.mm; sourceTree = "<group>"; };
+		AB307CA31252BD9400E9ABB6 /* qrAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrAnimation.h; sourceTree = "<group>"; };
+		AB307CA41252BD9400E9ABB6 /* qrAnimation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrAnimation.mm; sourceTree = "<group>"; };
+		AB38ECFA12638D440025A306 /* QuartoPieces2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QuartoPieces2.png; path = Models/Textures/QuartoPieces2.png; sourceTree = "<group>"; };
+		AB38ED67126394780025A306 /* board.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = board.vrm; path = Models/vrm/board.vrm; sourceTree = "<group>"; };
+		AB38EF2A1263D7420025A306 /* p0000.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p0000.vrm; path = Models/vrm2/p0000.vrm; sourceTree = "<group>"; };
+		AB38EF2B1263D7420025A306 /* p0001.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p0001.vrm; path = Models/vrm2/p0001.vrm; sourceTree = "<group>"; };
+		AB38EF2C1263D7420025A306 /* p0010.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p0010.vrm; path = Models/vrm2/p0010.vrm; sourceTree = "<group>"; };
+		AB38EF2D1263D7420025A306 /* p0011.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p0011.vrm; path = Models/vrm2/p0011.vrm; sourceTree = "<group>"; };
+		AB38EF2E1263D7420025A306 /* p0100.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p0100.vrm; path = Models/vrm2/p0100.vrm; sourceTree = "<group>"; };
+		AB38EF2F1263D7420025A306 /* p0101.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p0101.vrm; path = Models/vrm2/p0101.vrm; sourceTree = "<group>"; };
+		AB38EF301263D7420025A306 /* p0110.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p0110.vrm; path = Models/vrm2/p0110.vrm; sourceTree = "<group>"; };
+		AB38EF311263D7420025A306 /* p0111.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p0111.vrm; path = Models/vrm2/p0111.vrm; sourceTree = "<group>"; };
+		AB38EF321263D7420025A306 /* p1000.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p1000.vrm; path = Models/vrm2/p1000.vrm; sourceTree = "<group>"; };
+		AB38EF331263D7420025A306 /* p1001.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p1001.vrm; path = Models/vrm2/p1001.vrm; sourceTree = "<group>"; };
+		AB38EF341263D7420025A306 /* p1010.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p1010.vrm; path = Models/vrm2/p1010.vrm; sourceTree = "<group>"; };
+		AB38EF351263D7420025A306 /* p1011.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p1011.vrm; path = Models/vrm2/p1011.vrm; sourceTree = "<group>"; };
+		AB38EF361263D7420025A306 /* p1100.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p1100.vrm; path = Models/vrm2/p1100.vrm; sourceTree = "<group>"; };
+		AB38EF371263D7420025A306 /* p1101.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p1101.vrm; path = Models/vrm2/p1101.vrm; sourceTree = "<group>"; };
+		AB38EF381263D7420025A306 /* p1110.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p1110.vrm; path = Models/vrm2/p1110.vrm; sourceTree = "<group>"; };
+		AB38EF391263D7420025A306 /* p1111.vrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = p1111.vrm; path = Models/vrm2/p1111.vrm; sourceTree = "<group>"; };
+		AB38F0501264F0DD0025A306 /* sound61.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound61.wav; path = SoundFX/sound61.wav; sourceTree = "<group>"; };
+		AB38F0511264F0DD0025A306 /* sound88.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound88.wav; path = SoundFX/sound88.wav; sourceTree = "<group>"; };
+		AB38F0551264F20B0025A306 /* ButtonMute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonMute.png; path = UITextures/ButtonMute.png; sourceTree = "<group>"; };
+		AB38F0561264F20B0025A306 /* ButtonUnmute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonUnmute.png; path = UITextures/ButtonUnmute.png; sourceTree = "<group>"; };
+		AB38F06A1264F4C20025A306 /* click_2.wav.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = click_2.wav.caf; path = SoundFX/click_2.wav.caf; sourceTree = "<group>"; };
+		AB38F09B126503A70025A306 /* chimes.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = chimes.caf; path = SoundFX/chimes.caf; sourceTree = "<group>"; };
+		AB38F09D1265042C0025A306 /* sound84.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sound84.wav; path = SoundFX/sound84.wav; sourceTree = "<group>"; };
+		AB38F0DC12650D0F0025A306 /* Quarto_Icon_114px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Quarto_Icon_114px.png; path = Icons/Quarto_Icon_114px.png; sourceTree = "<group>"; };
+		AB38F0EF12650F820025A306 /* Icon-54.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-54.png"; path = "Icons/Icon-54.png"; sourceTree = "<group>"; };
+		AB38F0F012650F820025A306 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Icons/Icon-72.png"; sourceTree = "<group>"; };
+		AB38F20A126546230025A306 /* MainScreen_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MainScreen_small.png; path = UITextures/MainScreen_small.png; sourceTree = "<group>"; };
+		AB38F20C1265467F0025A306 /* SPScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SPScreen.png; path = UITextures/SPScreen.png; sourceTree = "<group>"; };
+		AB38F20F126547A80025A306 /* QuartoPieces2_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = QuartoPieces2_small.png; path = Models/Textures/QuartoPieces2_small.png; sourceTree = "<group>"; };
+		AB38F2C7126637070025A306 /* DialogBacking_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DialogBacking_small.png; path = UITextures/DialogBacking_small.png; sourceTree = "<group>"; };
+		AB3C6CEB124C3C44007D8C4A /* qrBoardRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrBoardRenderer.h; sourceTree = "<group>"; };
+		AB3C6CEC124C3C44007D8C4A /* qrBoardRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrBoardRenderer.mm; sourceTree = "<group>"; };
+		AB3C6CF0124C3C51007D8C4A /* qrPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrPlayer.h; sourceTree = "<group>"; };
+		AB3C6CF1124C3C51007D8C4A /* qrPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = qrPlayer.m; sourceTree = "<group>"; };
+		AB3C6CF5124C3C5E007D8C4A /* qrAIPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrAIPlayer.h; sourceTree = "<group>"; };
+		AB3C6CF6124C3C5E007D8C4A /* qrAIPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrAIPlayer.mm; sourceTree = "<group>"; };
+		AB3C6CFA124C3C6F007D8C4A /* qrBoardState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrBoardState.h; sourceTree = "<group>"; };
+		AB3C6CFB124C3C6F007D8C4A /* qrBoardState.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrBoardState.mm; sourceTree = "<group>"; };
+		AB3C6CFD124C3C96007D8C4A /* qrBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrBoard.h; sourceTree = "<group>"; };
+		AB3C6CFE124C3C96007D8C4A /* qrBoard.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrBoard.mm; sourceTree = "<group>"; };
+		AB3C6D01124C3CB1007D8C4A /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
+		AB3C6D02124C3CB1007D8C4A /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
+		AB3C6D05124C3CB1007D8C4A /* vrAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vrAudioManager.h; sourceTree = "<group>"; };
+		AB3C6D06124C3CB1007D8C4A /* vrAudioManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = vrAudioManager.mm; sourceTree = "<group>"; };
+		AB3C6D0B124C3CC1007D8C4A /* glTextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glTextManager.h; sourceTree = "<group>"; };
+		AB3C6D0C124C3CC1007D8C4A /* glTextManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = glTextManager.mm; sourceTree = "<group>"; };
+		AB3C6D0D124C3CC1007D8C4A /* vrFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vrFont.h; sourceTree = "<group>"; };
+		AB3C6D0E124C3CC1007D8C4A /* vrFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vrFont.m; sourceTree = "<group>"; };
+		AB3C6D13124C3CC8007D8C4A /* WaveFrontOBJGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveFrontOBJGroup.h; sourceTree = "<group>"; };
+		AB3C6D14124C3CC8007D8C4A /* WaveFrontOBJGroup.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WaveFrontOBJGroup.mm; sourceTree = "<group>"; };
+		AB3C6D15124C3CC8007D8C4A /* WaveFrontOBJMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveFrontOBJMaterial.h; sourceTree = "<group>"; };
+		AB3C6D16124C3CC8007D8C4A /* WaveFrontOBJMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaveFrontOBJMaterial.m; sourceTree = "<group>"; };
+		AB3C6D17124C3CC8007D8C4A /* WaveFrontOBJScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveFrontOBJScene.h; sourceTree = "<group>"; };
+		AB3C6D18124C3CC8007D8C4A /* WaveFrontOBJScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaveFrontOBJScene.m; sourceTree = "<group>"; };
+		AB3C6D19124C3CC8007D8C4A /* WaveFrontOBJTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveFrontOBJTexture.h; sourceTree = "<group>"; };
+		AB3C6D1A124C3CC8007D8C4A /* WaveFrontOBJTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaveFrontOBJTexture.m; sourceTree = "<group>"; };
+		AB3C6D1B124C3CC8007D8C4A /* WaveFrontOBJTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveFrontOBJTypes.h; sourceTree = "<group>"; };
+		AB3C6D1C124C3CC8007D8C4A /* vr3DModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vr3DModel.h; sourceTree = "<group>"; };
+		AB3C6D1D124C3CC8007D8C4A /* vr3DModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = vr3DModel.mm; sourceTree = "<group>"; };
+		AB3C6D1E124C3CC8007D8C4A /* vrModelPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vrModelPool.h; sourceTree = "<group>"; };
+		AB3C6D1F124C3CC8007D8C4A /* vrModelPool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = vrModelPool.mm; sourceTree = "<group>"; };
+		AB3C6D43124C3CDB007D8C4A /* OpenGLCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLCommon.h; path = Utility/OpenGLCommon.h; sourceTree = "<group>"; };
+		AB3C6D55124C3CE4007D8C4A /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SynthesizeSingleton.h; path = Utility/SynthesizeSingleton.h; sourceTree = "<group>"; };
+		AB3C6D56124C3CEE007D8C4A /* UIDevice+machine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+machine.h"; path = "Utility/UIDevice+machine.h"; sourceTree = "<group>"; };
+		AB3C6D57124C3CEE007D8C4A /* UIDevice+machine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "UIDevice+machine.mm"; path = "Utility/UIDevice+machine.mm"; sourceTree = "<group>"; };
+		AB3C6D58124C3CEE007D8C4A /* vrTypeDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vrTypeDefs.h; path = Utility/vrTypeDefs.h; sourceTree = "<group>"; };
+		AB3C6D66124C3F2B007D8C4A /* vrCollisionNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vrCollisionNode.h; sourceTree = "<group>"; };
+		AB3C6D67124C3F2B007D8C4A /* vrCollisionNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = vrCollisionNode.mm; sourceTree = "<group>"; };
+		AB3C6D68124C3F2B007D8C4A /* vrPlaneCNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vrPlaneCNode.h; sourceTree = "<group>"; };
+		AB3C6D69124C3F2B007D8C4A /* vrPlaneCNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = vrPlaneCNode.mm; sourceTree = "<group>"; };
+		AB3C6D77124C3FA3007D8C4A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		AB3C6D7B124C3FE0007D8C4A /* vrConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vrConstants.h; path = Utility/vrConstants.h; sourceTree = "<group>"; };
+		AB3C6D7E124C4094007D8C4A /* PVRTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVRTexture.h; sourceTree = "<group>"; };
+		AB3C6D7F124C4094007D8C4A /* PVRTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVRTexture.m; sourceTree = "<group>"; };
+		AB3C6D80124C4094007D8C4A /* Texture2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture2D.h; sourceTree = "<group>"; };
+		AB3C6D81124C4094007D8C4A /* Texture2D.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Texture2D.mm; sourceTree = "<group>"; };
+		AB3C6D82124C4094007D8C4A /* vrTexturePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vrTexturePool.h; sourceTree = "<group>"; };
+		AB3C6D83124C4094007D8C4A /* vrTexturePool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = vrTexturePool.mm; sourceTree = "<group>"; };
+		AB3C6D87124C40ED007D8C4A /* glUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glUtility.h; path = Utility/glUtility.h; sourceTree = "<group>"; };
+		AB3C6D88124C40ED007D8C4A /* glUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = glUtility.mm; path = Utility/glUtility.mm; sourceTree = "<group>"; };
+		AB3C6D90124C42A7007D8C4A /* NSString+ordinal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ordinal.h"; sourceTree = "<group>"; };
+		AB3C6D91124C42A7007D8C4A /* NSString+ordinal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ordinal.m"; sourceTree = "<group>"; };
+		AB3C6D92124C42A7007D8C4A /* NSString+timeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+timeString.h"; sourceTree = "<group>"; };
+		AB3C6D93124C42A7007D8C4A /* NSString+timeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+timeString.m"; sourceTree = "<group>"; };
+		AB3C6D94124C42A7007D8C4A /* NSString+vectorParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+vectorParse.h"; sourceTree = "<group>"; };
+		AB3C6D95124C42A7007D8C4A /* NSString+vectorParse.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+vectorParse.mm"; sourceTree = "<group>"; };
+		AB3C6D9B124C42D1007D8C4A /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		AB3C6DA5124C4329007D8C4A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AB3C6DA9124C4333007D8C4A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AB3C6DAF124C439D007D8C4A /* qrPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrPiece.h; sourceTree = "<group>"; };
+		AB3C6DB0124C439D007D8C4A /* qrPiece.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrPiece.mm; sourceTree = "<group>"; };
+		AB56FC421253E940001F8FC8 /* qrGameTextureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrGameTextureController.h; sourceTree = "<group>"; };
+		AB56FC431253E940001F8FC8 /* qrGameTextureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = qrGameTextureController.m; sourceTree = "<group>"; };
+		AB56FC531254ED30001F8FC8 /* MainScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MainScreen.png; path = UITextures/MainScreen.png; sourceTree = "<group>"; };
+		AB56FE1C12553555001F8FC8 /* qrScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrScreen.h; sourceTree = "<group>"; };
+		AB56FE1D12553555001F8FC8 /* qrScreen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrScreen.mm; sourceTree = "<group>"; };
+		AB56FE2012553ACF001F8FC8 /* qrViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrViewController.h; sourceTree = "<group>"; };
+		AB56FE2112553ACF001F8FC8 /* qrViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrViewController.mm; sourceTree = "<group>"; };
+		AB56FE9012555085001F8FC8 /* qrSinglePlayerGameScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrSinglePlayerGameScreen.h; sourceTree = "<group>"; };
+		AB56FE9112555085001F8FC8 /* qrSinglePlayerGameScreen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrSinglePlayerGameScreen.mm; sourceTree = "<group>"; };
+		AB56FE93125552D4001F8FC8 /* vrTransitionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vrTransitionHandler.h; path = "Utility/User Interface/vrTransitionHandler.h"; sourceTree = "<group>"; };
+		AB56FE94125552D4001F8FC8 /* vrTransitionHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = vrTransitionHandler.mm; path = "Utility/User Interface/vrTransitionHandler.mm"; sourceTree = "<group>"; };
+		AB6291C31379ABE30070AC60 /* Endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Endian.h; sourceTree = "<group>"; };
+		AB6291C41379ABE30070AC60 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		AB6291C51379ABE30070AC60 /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
+		AB6291C61379ABE30070AC60 /* Matrix.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Matrix.mm; sourceTree = "<group>"; };
+		AB6291C81379ABE30070AC60 /* neon_matrix_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = neon_matrix_impl.h; sourceTree = "<group>"; };
+		AB6291C91379ABE30070AC60 /* neon_matrix_impl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = neon_matrix_impl.mm; sourceTree = "<group>"; };
+		AB6291CA1379ABE30070AC60 /* Quaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quaternion.h; sourceTree = "<group>"; };
+		AB6291CD1379ABE30070AC60 /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
+		AB6291CE1379ABE30070AC60 /* Transform.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Transform.mm; sourceTree = "<group>"; };
+		AB6291CF1379ABE30070AC60 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		AB6291D01379ABE30070AC60 /* Vector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Vector.mm; sourceTree = "<group>"; };
+		AB6291D21379ABE30070AC60 /* common_macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common_macros.h; sourceTree = "<group>"; };
+		AB6291D31379ABE30070AC60 /* matrix_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix_impl.h; sourceTree = "<group>"; };
+		AB6291D41379ABE30070AC60 /* matrix_impl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = matrix_impl.mm; sourceTree = "<group>"; };
+		AB6291D51379ABE30070AC60 /* utility_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utility_impl.h; sourceTree = "<group>"; };
+		AB6291D61379ABE30070AC60 /* utility_impl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = utility_impl.mm; sourceTree = "<group>"; };
+		AB6291D71379ABE30070AC60 /* vfp_clobbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vfp_clobbers.h; sourceTree = "<group>"; };
+		AB6291D81379ABE30070AC60 /* vrMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vrMath.h; sourceTree = "<group>"; };
+		AB6291E01379AD860070AC60 /* SoundEffects.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SoundEffects.plist; path = plist/SoundEffects.plist; sourceTree = "<group>"; };
+		AB6291E41379AD9C0070AC60 /* SharedTextures_small.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SharedTextures_small.plist; path = plist/SharedTextures_small.plist; sourceTree = "<group>"; };
+		AB6291E51379AD9C0070AC60 /* SharedTextures.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SharedTextures.plist; path = plist/SharedTextures.plist; sourceTree = "<group>"; };
+		AB6291E81379ADAC0070AC60 /* UILayout_ipad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = UILayout_ipad.plist; path = plist/UILayout_ipad.plist; sourceTree = "<group>"; };
+		AB6291E91379ADAC0070AC60 /* UILayout_iphone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = UILayout_iphone.plist; path = plist/UILayout_iphone.plist; sourceTree = "<group>"; };
+		AB6291EC1379ADF20070AC60 /* Quarto-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Quarto-Info.plist"; sourceTree = "<group>"; };
+		AB6291EE1379AE0A0070AC60 /* UITextures_small.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = UITextures_small.plist; path = plist/UITextures_small.plist; sourceTree = "<group>"; };
+		AB6291EF1379AE0A0070AC60 /* UITextures.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = UITextures.plist; path = plist/UITextures.plist; sourceTree = "<group>"; };
+		AB8AB4161257F79D00D33F8B /* SPScreen_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SPScreen_small.png; path = UITextures/SPScreen_small.png; sourceTree = "<group>"; };
+		AB8AB51F1259047800D33F8B /* ButtonDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonDown.png; path = UITextures/ButtonDown.png; sourceTree = "<group>"; };
+		AB8AB5201259047800D33F8B /* ButtonUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonUp.png; path = UITextures/ButtonUp.png; sourceTree = "<group>"; };
+		AB8AB5D4125A39C200D33F8B /* PPBacking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PPBacking.png; path = UITextures/PPBacking.png; sourceTree = "<group>"; };
+		AB8AB637125A404800D33F8B /* PieceBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PieceBase.png; path = UITextures/PieceBase.png; sourceTree = "<group>"; };
+		AB8AB640125A443600D33F8B /* qrMultiPlayerSessonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrMultiPlayerSessonController.h; sourceTree = "<group>"; };
+		AB8AB641125A443600D33F8B /* qrMultiPlayerSessonController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrMultiPlayerSessonController.mm; sourceTree = "<group>"; };
+		AB8AB653125A450900D33F8B /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		AB8AB658125A481C00D33F8B /* qrMPGameScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrMPGameScreen.h; sourceTree = "<group>"; };
+		AB8AB659125A481C00D33F8B /* qrMPGameScreen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrMPGameScreen.mm; sourceTree = "<group>"; };
+		AB8AB829125A960A00D33F8B /* qrNetworkMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrNetworkMove.h; sourceTree = "<group>"; };
+		AB8AB82A125A960A00D33F8B /* qrNetworkMove.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrNetworkMove.mm; sourceTree = "<group>"; };
+		AB8AB9F4125BC18C00D33F8B /* DialogBacking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DialogBacking.png; path = UITextures/DialogBacking.png; sourceTree = "<group>"; };
+		AB8ABB16125C65A100D33F8B /* BackButtonDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BackButtonDown.png; path = UITextures/BackButtonDown.png; sourceTree = "<group>"; };
+		AB8ABB17125C65A100D33F8B /* BackButtonUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BackButtonUp.png; path = UITextures/BackButtonUp.png; sourceTree = "<group>"; };
+		AB8ABB34125CEFED00D33F8B /* TempusLarge_tweaked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TempusLarge_tweaked.png; path = Font/TempusLarge_tweaked.png; sourceTree = "<group>"; };
+		AB8ABB38125CF02400D33F8B /* TempusLarge.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TempusLarge.ini; path = Font/TempusLarge.ini; sourceTree = "<group>"; };
+		AB8ABB52125CFEBA00D33F8B /* ResetButtonDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ResetButtonDown.png; path = UITextures/ResetButtonDown.png; sourceTree = "<group>"; };
+		AB8ABB53125CFEBA00D33F8B /* ResetButtonUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ResetButtonUp.png; path = UITextures/ResetButtonUp.png; sourceTree = "<group>"; };
+		AB8ABB69125D0A3000D33F8B /* TempusLarge_tweaked_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TempusLarge_tweaked_512.png; path = Font/TempusLarge_tweaked_512.png; sourceTree = "<group>"; };
+		AB8ABB86125D0F7500D33F8B /* qrGameStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrGameStats.h; sourceTree = "<group>"; };
+		AB8ABB87125D0F7500D33F8B /* qrGameStats.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrGameStats.mm; sourceTree = "<group>"; };
+		AB8ABBB7125D525600D33F8B /* qrStatsScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrStatsScreen.h; sourceTree = "<group>"; };
+		AB8ABBB8125D525600D33F8B /* qrStatsScreen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrStatsScreen.mm; sourceTree = "<group>"; };
+		AB8ABC8A125E494400D33F8B /* ScrollDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ScrollDown.png; path = UITextures/ScrollDown.png; sourceTree = "<group>"; };
+		AB8ABC8B125E494400D33F8B /* ScrollUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ScrollUp.png; path = UITextures/ScrollUp.png; sourceTree = "<group>"; };
+		ABDCF8EF1251054300A23E02 /* vrButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vrButton.h; path = "Utility/User Interface/vrButton.h"; sourceTree = "<group>"; };
+		ABDCF8F01251054300A23E02 /* vrButton.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = vrButton.mm; path = "Utility/User Interface/vrButton.mm"; sourceTree = "<group>"; };
+		ABDCF8F11251054300A23E02 /* vrControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vrControl.h; path = "Utility/User Interface/vrControl.h"; sourceTree = "<group>"; };
+		ABDCF8F21251054300A23E02 /* vrControl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = vrControl.mm; path = "Utility/User Interface/vrControl.mm"; sourceTree = "<group>"; };
+		ABDCF8F31251054300A23E02 /* vrUIControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vrUIControl.h; path = "Utility/User Interface/vrUIControl.h"; sourceTree = "<group>"; };
+		ABDCF8F41251054300A23E02 /* vrUIControl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = vrUIControl.mm; path = "Utility/User Interface/vrUIControl.mm"; sourceTree = "<group>"; };
+		ABDCF9E212511E1900A23E02 /* vrModalDialog.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = vrModalDialog.mm; path = "Utility/User Interface/vrModalDialog.mm"; sourceTree = "<group>"; };
+		ABDCF9E312511E1900A23E02 /* vrTextBox.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = vrTextBox.mm; path = "Utility/User Interface/vrTextBox.mm"; sourceTree = "<group>"; };
+		ABDCF9E412511E1900A23E02 /* vrTextBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vrTextBox.h; path = "Utility/User Interface/vrTextBox.h"; sourceTree = "<group>"; };
+		ABDCF9E512511E1900A23E02 /* vrModalDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vrModalDialog.h; path = "Utility/User Interface/vrModalDialog.h"; sourceTree = "<group>"; };
+		ABDCF9E612511E1900A23E02 /* vrSliderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vrSliderControl.h; path = "Utility/User Interface/vrSliderControl.h"; sourceTree = "<group>"; };
+		ABDCF9E712511E1900A23E02 /* vrSliderControl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = vrSliderControl.mm; path = "Utility/User Interface/vrSliderControl.mm"; sourceTree = "<group>"; };
+		ABDCF9FE12511E7700A23E02 /* vrUIElement.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = vrUIElement.mm; path = "Utility/User Interface/vrUIElement.mm"; sourceTree = "<group>"; };
+		ABDCF9FF12511E7700A23E02 /* vrUIElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vrUIElement.h; path = "Utility/User Interface/vrUIElement.h"; sourceTree = "<group>"; };
+		ABDCFA131251427400A23E02 /* qrAIMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrAIMove.h; sourceTree = "<group>"; };
+		ABDCFA141251427400A23E02 /* qrAIMove.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qrAIMove.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */,
+				28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */,
+				AB3C6D78124C3FA3007D8C4A /* AudioToolbox.framework in Frameworks */,
+				AB3C6D9C124C42D1007D8C4A /* OpenAL.framework in Frameworks */,
+				AB3C6DA6124C4329007D8C4A /* AVFoundation.framework in Frameworks */,
+				AB3C6DAA124C4333007D8C4A /* CoreGraphics.framework in Frameworks */,
+				AB8AB654125A450900D33F8B /* GameKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* QuartoAppDelegate.h */,
+				1D3623250D0F684500981E51 /* QuartoAppDelegate.mm */,
+				AB3C6D60124C3E20007D8C4A /* Model */,
+				AB3C6D5A124C3CF1007D8C4A /* Common */,
+				AB1C6A68124E6BDA0046A796 /* View */,
+				AB42DC36124277BB000F5139 /* Controller */,
+				AB42DC35124277AD000F5139 /* ESRenderers */,
+				AB3C6D65124C3F2B007D8C4A /* Collision */,
+				AB3C6D7D124C4094007D8C4A /* Texture */,
+				AB3C6D8F124C42A7007D8C4A /* String */,
+				AB3C6D11124C3CC7007D8C4A /* Model */,
+				AB6291C21379ABE30070AC60 /* Math */,
+				AB3C6D0A124C3CC1007D8C4A /* Font */,
+				AB3C6D00124C3CB1007D8C4A /* Audio */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Quarto.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2514C27610084DB600A42282 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				2514C27910084DCA00A42282 /* Shader.fsh */,
+				2514C27A10084DCA00A42282 /* Shader.vsh */,
+			);
+			name = Shaders;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				2514C27610084DB600A42282 /* Shaders */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Quarto_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB38F04E1264F0B60025A306 /* SoundFX */,
+				AB0ACC281260FDBE007524FA /* Loading Screens */,
+				AB56FC3E1253E36C001F8FC8 /* UserInterface */,
+				AB1C6BAD124EB4970046A796 /* Font */,
+				AB105D18124D2F4600B1A777 /* Textures */,
+				AB105C53124D198500B1A777 /* Models */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				AB38F0EF12650F820025A306 /* Icon-54.png */,
+				AB38F0F012650F820025A306 /* Icon-72.png */,
+				AB6291EC1379ADF20070AC60 /* Quarto-Info.plist */,
+				AB38F0DC12650D0F0025A306 /* Quarto_Icon_114px.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28FD15070DC6FC5B0079059D /* QuartzCore.framework */,
+				28FD14FF0DC6FC520079059D /* OpenGLES.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				AB3C6D77124C3FA3007D8C4A /* AudioToolbox.framework */,
+				AB3C6D9B124C42D1007D8C4A /* OpenAL.framework */,
+				AB3C6DA5124C4329007D8C4A /* AVFoundation.framework */,
+				AB3C6DA9124C4333007D8C4A /* CoreGraphics.framework */,
+				AB8AB653125A450900D33F8B /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB0ACC281260FDBE007524FA /* Loading Screens */ = {
+			isa = PBXGroup;
+			children = (
+				AB0ACC2C1260FDF5007524FA /* iPadLS.png */,
+				AB172B53126243370010F00D /* Default.png */,
+			);
+			name = "Loading Screens";
+			sourceTree = "<group>";
+		};
+		AB105C53124D198500B1A777 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB307BE112529B1F00E9ABB6 /* vrm */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AB105D18124D2F4600B1A777 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				AB105E36124D566E00B1A777 /* QuartoBoard.png */,
+				AB38ECFA12638D440025A306 /* QuartoPieces2.png */,
+				AB38F20F126547A80025A306 /* QuartoPieces2_small.png */,
+				AB6291E41379AD9C0070AC60 /* SharedTextures_small.plist */,
+				AB6291E51379AD9C0070AC60 /* SharedTextures.plist */,
+			);
+			name = Textures;
+			sourceTree = "<group>";
+		};
+		AB1C6A68124E6BDA0046A796 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB307BC712529A2C00E9ABB6 /* Screens */,
+				ABDCF8DD125104D500A23E02 /* UIControls */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AB1C6BAD124EB4970046A796 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AB8ABB34125CEFED00D33F8B /* TempusLarge_tweaked.png */,
+				AB8ABB69125D0A3000D33F8B /* TempusLarge_tweaked_512.png */,
+				AB8ABB38125CF02400D33F8B /* TempusLarge.ini */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
+		AB307BC712529A2C00E9ABB6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				AB56FE9B12555C8A001F8FC8 /* Dialog */,
+				AB56FE1C12553555001F8FC8 /* qrScreen.h */,
+				AB56FE1D12553555001F8FC8 /* qrScreen.mm */,
+				AB1C6A87124E977C0046A796 /* qrGameScreen.h */,
+				AB1C6A88124E977C0046A796 /* qrGameScreen.mm */,
+				AB307BC31252998800E9ABB6 /* qrHomeScreen.h */,
+				AB307BC41252998800E9ABB6 /* qrHomeScreen.mm */,
+				AB56FE9012555085001F8FC8 /* qrSinglePlayerGameScreen.h */,
+				AB56FE9112555085001F8FC8 /* qrSinglePlayerGameScreen.mm */,
+				AB8AB658125A481C00D33F8B /* qrMPGameScreen.h */,
+				AB8AB659125A481C00D33F8B /* qrMPGameScreen.mm */,
+				AB8ABBB7125D525600D33F8B /* qrStatsScreen.h */,
+				AB8ABBB8125D525600D33F8B /* qrStatsScreen.mm */,
+				AB0ACCFC1261189C007524FA /* qrInstructionsScreen.h */,
+				AB0ACCFD1261189C007524FA /* qrInstructionsScreen.mm */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		AB307BC812529A4A00E9ABB6 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				AB3C6CEB124C3C44007D8C4A /* qrBoardRenderer.h */,
+				AB3C6CEC124C3C44007D8C4A /* qrBoardRenderer.mm */,
+			);
+			name = Renderer;
+			sourceTree = "<group>";
+		};
+		AB307BC912529A6500E9ABB6 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				AB3C6CF0124C3C51007D8C4A /* qrPlayer.h */,
+				AB3C6CF1124C3C51007D8C4A /* qrPlayer.m */,
+				AB3C6CFA124C3C6F007D8C4A /* qrBoardState.h */,
+				AB3C6CFB124C3C6F007D8C4A /* qrBoardState.mm */,
+				AB3C6CFD124C3C96007D8C4A /* qrBoard.h */,
+				AB3C6CFE124C3C96007D8C4A /* qrBoard.mm */,
+				AB3C6DAF124C439D007D8C4A /* qrPiece.h */,
+				AB3C6DB0124C439D007D8C4A /* qrPiece.mm */,
+				AB8AB829125A960A00D33F8B /* qrNetworkMove.h */,
+				AB8AB82A125A960A00D33F8B /* qrNetworkMove.mm */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		AB307BE112529B1F00E9ABB6 /* vrm */ = {
+			isa = PBXGroup;
+			children = (
+				AB38ED67126394780025A306 /* board.vrm */,
+				AB38EF2A1263D7420025A306 /* p0000.vrm */,
+				AB38EF2B1263D7420025A306 /* p0001.vrm */,
+				AB38EF2C1263D7420025A306 /* p0010.vrm */,
+				AB38EF2D1263D7420025A306 /* p0011.vrm */,
+				AB38EF2E1263D7420025A306 /* p0100.vrm */,
+				AB38EF2F1263D7420025A306 /* p0101.vrm */,
+				AB38EF301263D7420025A306 /* p0110.vrm */,
+				AB38EF311263D7420025A306 /* p0111.vrm */,
+				AB38EF321263D7420025A306 /* p1000.vrm */,
+				AB38EF331263D7420025A306 /* p1001.vrm */,
+				AB38EF341263D7420025A306 /* p1010.vrm */,
+				AB38EF351263D7420025A306 /* p1011.vrm */,
+				AB38EF361263D7420025A306 /* p1100.vrm */,
+				AB38EF371263D7420025A306 /* p1101.vrm */,
+				AB38EF381263D7420025A306 /* p1110.vrm */,
+				AB38EF391263D7420025A306 /* p1111.vrm */,
+			);
+			name = vrm;
+			sourceTree = "<group>";
+		};
+		AB307CA21252BD7E00E9ABB6 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				AB307CA31252BD9400E9ABB6 /* qrAnimation.h */,
+				AB307CA41252BD9400E9ABB6 /* qrAnimation.mm */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
+		AB38F04E1264F0B60025A306 /* SoundFX */ = {
+			isa = PBXGroup;
+			children = (
+				AB38F09B126503A70025A306 /* chimes.caf */,
+				AB38F0501264F0DD0025A306 /* sound61.wav */,
+				AB38F0511264F0DD0025A306 /* sound88.wav */,
+				AB38F09D1265042C0025A306 /* sound84.wav */,
+				AB38F06A1264F4C20025A306 /* click_2.wav.caf */,
+				AB6291E01379AD860070AC60 /* SoundEffects.plist */,
+			);
+			name = SoundFX;
+			sourceTree = "<group>";
+		};
+		AB3C6D00124C3CB1007D8C4A /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				AB3C6D01124C3CB1007D8C4A /* SoundEffect.h */,
+				AB3C6D02124C3CB1007D8C4A /* SoundEffect.m */,
+				AB3C6D05124C3CB1007D8C4A /* vrAudioManager.h */,
+				AB3C6D06124C3CB1007D8C4A /* vrAudioManager.mm */,
+			);
+			name = Audio;
+			path = Utility/Audio;
+			sourceTree = "<group>";
+		};
+		AB3C6D0A124C3CC1007D8C4A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AB3C6D0B124C3CC1007D8C4A /* glTextManager.h */,
+				AB3C6D0C124C3CC1007D8C4A /* glTextManager.mm */,
+				AB3C6D0D124C3CC1007D8C4A /* vrFont.h */,
+				AB3C6D0E124C3CC1007D8C4A /* vrFont.m */,
+			);
+			name = Font;
+			path = Utility/Font;
+			sourceTree = "<group>";
+		};
+		AB3C6D11124C3CC7007D8C4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB3C6D12124C3CC8007D8C4A /* OBJ_LOADER */,
+				AB3C6D1C124C3CC8007D8C4A /* vr3DModel.h */,
+				AB3C6D1D124C3CC8007D8C4A /* vr3DModel.mm */,
+				AB3C6D1E124C3CC8007D8C4A /* vrModelPool.h */,
+				AB3C6D1F124C3CC8007D8C4A /* vrModelPool.mm */,
+			);
+			name = Model;
+			path = Utility/Model;
+			sourceTree = "<group>";
+		};
+		AB3C6D12124C3CC8007D8C4A /* OBJ_LOADER */ = {
+			isa = PBXGroup;
+			children = (
+				AB3C6D13124C3CC8007D8C4A /* WaveFrontOBJGroup.h */,
+				AB3C6D14124C3CC8007D8C4A /* WaveFrontOBJGroup.mm */,
+				AB3C6D15124C3CC8007D8C4A /* WaveFrontOBJMaterial.h */,
+				AB3C6D16124C3CC8007D8C4A /* WaveFrontOBJMaterial.m */,
+				AB3C6D17124C3CC8007D8C4A /* WaveFrontOBJScene.h */,
+				AB3C6D18124C3CC8007D8C4A /* WaveFrontOBJScene.m */,
+				AB3C6D19124C3CC8007D8C4A /* WaveFrontOBJTexture.h */,
+				AB3C6D1A124C3CC8007D8C4A /* WaveFrontOBJTexture.m */,
+				AB3C6D1B124C3CC8007D8C4A /* WaveFrontOBJTypes.h */,
+			);
+			path = OBJ_LOADER;
+			sourceTree = "<group>";
+		};
+		AB3C6D5A124C3CF1007D8C4A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AB307B3A1252782300E9ABB6 /* qrTypeDefs.h */,
+				AB3C6D87124C40ED007D8C4A /* glUtility.h */,
+				AB3C6D88124C40ED007D8C4A /* glUtility.mm */,
+				AB3C6D7B124C3FE0007D8C4A /* vrConstants.h */,
+				AB3C6D56124C3CEE007D8C4A /* UIDevice+machine.h */,
+				AB3C6D57124C3CEE007D8C4A /* UIDevice+machine.mm */,
+				AB3C6D58124C3CEE007D8C4A /* vrTypeDefs.h */,
+				AB3C6D43124C3CDB007D8C4A /* OpenGLCommon.h */,
+				AB3C6D55124C3CE4007D8C4A /* SynthesizeSingleton.h */,
+				AB105F72124D94D100B1A777 /* qrGeometryGlobals.h */,
+				AB105F73124D94D100B1A777 /* qrGeometryGlobals.mm */,
+				AB307B3C1252786400E9ABB6 /* qrGameState.h */,
+				AB307B3D1252786400E9ABB6 /* qrGameState.mm */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		AB3C6D60124C3E20007D8C4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB8ABB86125D0F7500D33F8B /* qrGameStats.h */,
+				AB8ABB87125D0F7500D33F8B /* qrGameStats.mm */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AB3C6D65124C3F2B007D8C4A /* Collision */ = {
+			isa = PBXGroup;
+			children = (
+				AB3C6D66124C3F2B007D8C4A /* vrCollisionNode.h */,
+				AB3C6D67124C3F2B007D8C4A /* vrCollisionNode.mm */,
+				AB3C6D68124C3F2B007D8C4A /* vrPlaneCNode.h */,
+				AB3C6D69124C3F2B007D8C4A /* vrPlaneCNode.mm */,
+			);
+			name = Collision;
+			path = Utility/Collision;
+			sourceTree = "<group>";
+		};
+		AB3C6D7D124C4094007D8C4A /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+				AB3C6D7E124C4094007D8C4A /* PVRTexture.h */,
+				AB3C6D7F124C4094007D8C4A /* PVRTexture.m */,
+				AB3C6D80124C4094007D8C4A /* Texture2D.h */,
+				AB3C6D81124C4094007D8C4A /* Texture2D.mm */,
+				AB3C6D82124C4094007D8C4A /* vrTexturePool.h */,
+				AB3C6D83124C4094007D8C4A /* vrTexturePool.mm */,
+			);
+			name = Texture;
+			path = Utility/Texture;
+			sourceTree = "<group>";
+		};
+		AB3C6D8F124C42A7007D8C4A /* String */ = {
+			isa = PBXGroup;
+			children = (
+				AB3C6D90124C42A7007D8C4A /* NSString+ordinal.h */,
+				AB3C6D91124C42A7007D8C4A /* NSString+ordinal.m */,
+				AB3C6D92124C42A7007D8C4A /* NSString+timeString.h */,
+				AB3C6D93124C42A7007D8C4A /* NSString+timeString.m */,
+				AB3C6D94124C42A7007D8C4A /* NSString+vectorParse.h */,
+				AB3C6D95124C42A7007D8C4A /* NSString+vectorParse.mm */,
+			);
+			name = String;
+			path = Utility/String;
+			sourceTree = "<group>";
+		};
+		AB42DC35124277AD000F5139 /* ESRenderers */ = {
+			isa = PBXGroup;
+			children = (
+				28FD14FC0DC6FC130079059D /* EAGLView.h */,
+				28FD14FD0DC6FC130079059D /* EAGLView.mm */,
+			);
+			name = ESRenderers;
+			sourceTree = "<group>";
+		};
+		AB42DC36124277BB000F5139 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB105C9F124D1D2400B1A777 /* qrAppController.h */,
+				AB105CA0124D1D2400B1A777 /* qrAppController.mm */,
+				AB56FE2012553ACF001F8FC8 /* qrViewController.h */,
+				AB56FE2112553ACF001F8FC8 /* qrViewController.mm */,
+				AB56FC421253E940001F8FC8 /* qrGameTextureController.h */,
+				AB56FC431253E940001F8FC8 /* qrGameTextureController.m */,
+				AB56FE93125552D4001F8FC8 /* vrTransitionHandler.h */,
+				AB56FE94125552D4001F8FC8 /* vrTransitionHandler.mm */,
+				AB8AB640125A443600D33F8B /* qrMultiPlayerSessonController.h */,
+				AB8AB641125A443600D33F8B /* qrMultiPlayerSessonController.mm */,
+				AB307CA21252BD7E00E9ABB6 /* Animation */,
+				AB307BC912529A6500E9ABB6 /* Game */,
+				AB307BC812529A4A00E9ABB6 /* Renderer */,
+				ABDCFA121251426200A23E02 /* AI */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		AB56FC3E1253E36C001F8FC8 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				AB6291E81379ADAC0070AC60 /* UILayout_ipad.plist */,
+				AB6291E91379ADAC0070AC60 /* UILayout_iphone.plist */,
+				AB0ACD0512611CC4007524FA /* Instructions.txt */,
+				AB56FC581254EE69001F8FC8 /* Common */,
+			);
+			name = UserInterface;
+			sourceTree = "<group>";
+		};
+		AB56FC451254ED14001F8FC8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				AB6291EE1379AE0A0070AC60 /* UITextures_small.plist */,
+				AB6291EF1379AE0A0070AC60 /* UITextures.plist */,
+				AB0ACC1E1260FD97007524FA /* Background.png */,
+				AB56FC531254ED30001F8FC8 /* MainScreen.png */,
+				AB38F20A126546230025A306 /* MainScreen_small.png */,
+				AB38F20C1265467F0025A306 /* SPScreen.png */,
+				AB8AB4161257F79D00D33F8B /* SPScreen_small.png */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		AB56FC581254EE69001F8FC8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AB8AB5231259048100D33F8B /* Buttons */,
+				AB56FC451254ED14001F8FC8 /* Screens */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		AB56FE9B12555C8A001F8FC8 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				ABDCF9E212511E1900A23E02 /* vrModalDialog.mm */,
+				ABDCF9E512511E1900A23E02 /* vrModalDialog.h */,
+			);
+			name = Dialog;
+			sourceTree = "<group>";
+		};
+		AB6291C21379ABE30070AC60 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				AB6291C31379ABE30070AC60 /* Endian.h */,
+				AB6291C41379ABE30070AC60 /* Macros.h */,
+				AB6291C51379ABE30070AC60 /* Matrix.h */,
+				AB6291C61379ABE30070AC60 /* Matrix.mm */,
+				AB6291C71379ABE30070AC60 /* neonmath */,
+				AB6291CA1379ABE30070AC60 /* Quaternion.h */,
+				AB6291CD1379ABE30070AC60 /* Transform.h */,
+				AB6291CE1379ABE30070AC60 /* Transform.mm */,
+				AB6291CF1379ABE30070AC60 /* Vector.h */,
+				AB6291D01379ABE30070AC60 /* Vector.mm */,
+				AB6291D11379ABE30070AC60 /* vfpmath */,
+				AB6291D81379ABE30070AC60 /* vrMath.h */,
+			);
+			name = Math;
+			path = Utility/Math;
+			sourceTree = "<group>";
+		};
+		AB6291C71379ABE30070AC60 /* neonmath */ = {
+			isa = PBXGroup;
+			children = (
+				AB6291C81379ABE30070AC60 /* neon_matrix_impl.h */,
+				AB6291C91379ABE30070AC60 /* neon_matrix_impl.mm */,
+			);
+			path = neonmath;
+			sourceTree = "<group>";
+		};
+		AB6291D11379ABE30070AC60 /* vfpmath */ = {
+			isa = PBXGroup;
+			children = (
+				AB6291D21379ABE30070AC60 /* common_macros.h */,
+				AB6291D31379ABE30070AC60 /* matrix_impl.h */,
+				AB6291D41379ABE30070AC60 /* matrix_impl.mm */,
+				AB6291D51379ABE30070AC60 /* utility_impl.h */,
+				AB6291D61379ABE30070AC60 /* utility_impl.mm */,
+				AB6291D71379ABE30070AC60 /* vfp_clobbers.h */,
+			);
+			path = vfpmath;
+			sourceTree = "<group>";
+		};
+		AB8AB5231259048100D33F8B /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				AB8AB51F1259047800D33F8B /* ButtonDown.png */,
+				AB8AB5201259047800D33F8B /* ButtonUp.png */,
+				AB38F0551264F20B0025A306 /* ButtonMute.png */,
+				AB38F0561264F20B0025A306 /* ButtonUnmute.png */,
+				AB8AB5D4125A39C200D33F8B /* PPBacking.png */,
+				AB8AB637125A404800D33F8B /* PieceBase.png */,
+				AB8AB9F4125BC18C00D33F8B /* DialogBacking.png */,
+				AB38F2C7126637070025A306 /* DialogBacking_small.png */,
+				AB8ABB16125C65A100D33F8B /* BackButtonDown.png */,
+				AB8ABB17125C65A100D33F8B /* BackButtonUp.png */,
+				AB8ABB52125CFEBA00D33F8B /* ResetButtonDown.png */,
+				AB8ABB53125CFEBA00D33F8B /* ResetButtonUp.png */,
+				AB8ABC8A125E494400D33F8B /* ScrollDown.png */,
+				AB8ABC8B125E494400D33F8B /* ScrollUp.png */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		ABDCF8DD125104D500A23E02 /* UIControls */ = {
+			isa = PBXGroup;
+			children = (
+				AB1C6A6C124E6D560046A796 /* qrOrthoView.h */,
+				AB1C6A6D124E6D560046A796 /* qrOrthoView.mm */,
+				AB1C6A69124E6BF00046A796 /* qrPiecePickerView.h */,
+				AB1C6A6A124E6BF00046A796 /* qrPiecePickerView.mm */,
+				AB1C6A73124E75670046A796 /* qrPieceView.h */,
+				AB1C6A74124E75670046A796 /* qrPieceView.mm */,
+				ABDCF8EF1251054300A23E02 /* vrButton.h */,
+				ABDCF8F01251054300A23E02 /* vrButton.mm */,
+				ABDCF8F11251054300A23E02 /* vrControl.h */,
+				ABDCF8F21251054300A23E02 /* vrControl.mm */,
+				ABDCF8F31251054300A23E02 /* vrUIControl.h */,
+				ABDCF8F41251054300A23E02 /* vrUIControl.mm */,
+				ABDCF9E312511E1900A23E02 /* vrTextBox.mm */,
+				ABDCF9E412511E1900A23E02 /* vrTextBox.h */,
+				ABDCF9E612511E1900A23E02 /* vrSliderControl.h */,
+				ABDCF9E712511E1900A23E02 /* vrSliderControl.mm */,
+				ABDCF9FE12511E7700A23E02 /* vrUIElement.mm */,
+				ABDCF9FF12511E7700A23E02 /* vrUIElement.h */,
+			);
+			name = UIControls;
+			sourceTree = "<group>";
+		};
+		ABDCFA121251426200A23E02 /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				AB3C6CF5124C3C5E007D8C4A /* qrAIPlayer.h */,
+				AB3C6CF6124C3C5E007D8C4A /* qrAIPlayer.mm */,
+				ABDCFA131251427400A23E02 /* qrAIMove.h */,
+				ABDCFA141251427400A23E02 /* qrAIMove.mm */,
+			);
+			name = AI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Quarto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Quarto" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Quarto;
+			productName = Quarto;
+			productReference = 1D6058910D05DD3D006BFB54 /* Quarto.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Quarto" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Quarto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2514C27B10084DCA00A42282 /* Shader.fsh in Resources */,
+				2514C27C10084DCA00A42282 /* Shader.vsh in Resources */,
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				AB105E37124D566E00B1A777 /* QuartoBoard.png in Resources */,
+				AB56FC541254ED30001F8FC8 /* MainScreen.png in Resources */,
+				AB8AB4171257F79D00D33F8B /* SPScreen_small.png in Resources */,
+				AB8AB5211259047800D33F8B /* ButtonDown.png in Resources */,
+				AB8AB5221259047800D33F8B /* ButtonUp.png in Resources */,
+				AB8AB5D5125A39C200D33F8B /* PPBacking.png in Resources */,
+				AB8AB638125A404800D33F8B /* PieceBase.png in Resources */,
+				AB8AB9F5125BC18C00D33F8B /* DialogBacking.png in Resources */,
+				AB8ABB18125C65A100D33F8B /* BackButtonDown.png in Resources */,
+				AB8ABB19125C65A100D33F8B /* BackButtonUp.png in Resources */,
+				AB8ABB39125CF02400D33F8B /* TempusLarge.ini in Resources */,
+				AB8ABB54125CFEBA00D33F8B /* ResetButtonDown.png in Resources */,
+				AB8ABB55125CFEBA00D33F8B /* ResetButtonUp.png in Resources */,
+				AB8ABB6A125D0A3000D33F8B /* TempusLarge_tweaked_512.png in Resources */,
+				AB8ABC8C125E494400D33F8B /* ScrollDown.png in Resources */,
+				AB8ABC8D125E494400D33F8B /* ScrollUp.png in Resources */,
+				AB0ACC1F1260FD97007524FA /* Background.png in Resources */,
+				AB0ACC2D1260FDF5007524FA /* iPadLS.png in Resources */,
+				AB0ACD0612611CC4007524FA /* Instructions.txt in Resources */,
+				AB172B54126243370010F00D /* Default.png in Resources */,
+				AB38ECFB12638D440025A306 /* QuartoPieces2.png in Resources */,
+				AB38ED68126394780025A306 /* board.vrm in Resources */,
+				AB38EF3A1263D7420025A306 /* p0000.vrm in Resources */,
+				AB38EF3B1263D7420025A306 /* p0001.vrm in Resources */,
+				AB38EF3C1263D7420025A306 /* p0010.vrm in Resources */,
+				AB38EF3D1263D7420025A306 /* p0011.vrm in Resources */,
+				AB38EF3E1263D7420025A306 /* p0100.vrm in Resources */,
+				AB38EF3F1263D7420025A306 /* p0101.vrm in Resources */,
+				AB38EF401263D7420025A306 /* p0110.vrm in Resources */,
+				AB38EF411263D7420025A306 /* p0111.vrm in Resources */,
+				AB38EF421263D7420025A306 /* p1000.vrm in Resources */,
+				AB38EF431263D7420025A306 /* p1001.vrm in Resources */,
+				AB38EF441263D7420025A306 /* p1010.vrm in Resources */,
+				AB38EF451263D7420025A306 /* p1011.vrm in Resources */,
+				AB38EF461263D7420025A306 /* p1100.vrm in Resources */,
+				AB38EF471263D7420025A306 /* p1101.vrm in Resources */,
+				AB38EF481263D7420025A306 /* p1110.vrm in Resources */,
+				AB38EF491263D7420025A306 /* p1111.vrm in Resources */,
+				AB38F0521264F0DD0025A306 /* sound61.wav in Resources */,
+				AB38F0571264F20B0025A306 /* ButtonMute.png in Resources */,
+				AB38F0581264F20B0025A306 /* ButtonUnmute.png in Resources */,
+				AB38F06B1264F4C20025A306 /* click_2.wav.caf in Resources */,
+				AB38F09C126503A70025A306 /* chimes.caf in Resources */,
+				AB38F09E1265042C0025A306 /* sound84.wav in Resources */,
+				AB38F0DD12650D0F0025A306 /* Quarto_Icon_114px.png in Resources */,
+				AB38F0F112650F820025A306 /* Icon-54.png in Resources */,
+				AB38F0F212650F820025A306 /* Icon-72.png in Resources */,
+				AB38F20B126546230025A306 /* MainScreen_small.png in Resources */,
+				AB38F20D1265467F0025A306 /* SPScreen.png in Resources */,
+				AB38F210126547A80025A306 /* QuartoPieces2_small.png in Resources */,
+				AB38F211126548140025A306 /* sound88.wav in Resources */,
+				AB38F2C8126637070025A306 /* DialogBacking_small.png in Resources */,
+				AB6291E11379AD860070AC60 /* SoundEffects.plist in Resources */,
+				AB6291E61379AD9C0070AC60 /* SharedTextures_small.plist in Resources */,
+				AB6291E71379AD9C0070AC60 /* SharedTextures.plist in Resources */,
+				AB6291EA1379ADAC0070AC60 /* UILayout_ipad.plist in Resources */,
+				AB6291EB1379ADAC0070AC60 /* UILayout_iphone.plist in Resources */,
+				AB6291ED1379ADF20070AC60 /* Quarto-Info.plist in Resources */,
+				AB6291F01379AE0A0070AC60 /* UITextures_small.plist in Resources */,
+				AB6291F11379AE0A0070AC60 /* UITextures.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* QuartoAppDelegate.mm in Sources */,
+				28FD14FE0DC6FC130079059D /* EAGLView.mm in Sources */,
+				AB3C6CED124C3C44007D8C4A /* qrBoardRenderer.mm in Sources */,
+				AB3C6CF2124C3C51007D8C4A /* qrPlayer.m in Sources */,
+				AB3C6CF7124C3C5E007D8C4A /* qrAIPlayer.mm in Sources */,
+				AB3C6CFC124C3C6F007D8C4A /* qrBoardState.mm in Sources */,
+				AB3C6CFF124C3C96007D8C4A /* qrBoard.mm in Sources */,
+				AB3C6D07124C3CB1007D8C4A /* SoundEffect.m in Sources */,
+				AB3C6D09124C3CB1007D8C4A /* vrAudioManager.mm in Sources */,
+				AB3C6D0F124C3CC1007D8C4A /* glTextManager.mm in Sources */,
+				AB3C6D10124C3CC1007D8C4A /* vrFont.m in Sources */,
+				AB3C6D20124C3CC8007D8C4A /* WaveFrontOBJGroup.mm in Sources */,
+				AB3C6D21124C3CC8007D8C4A /* WaveFrontOBJMaterial.m in Sources */,
+				AB3C6D22124C3CC8007D8C4A /* WaveFrontOBJScene.m in Sources */,
+				AB3C6D23124C3CC8007D8C4A /* WaveFrontOBJTexture.m in Sources */,
+				AB3C6D24124C3CC8007D8C4A /* vr3DModel.mm in Sources */,
+				AB3C6D25124C3CC8007D8C4A /* vrModelPool.mm in Sources */,
+				AB3C6D59124C3CEE007D8C4A /* UIDevice+machine.mm in Sources */,
+				AB3C6D6A124C3F2B007D8C4A /* vrCollisionNode.mm in Sources */,
+				AB3C6D6B124C3F2B007D8C4A /* vrPlaneCNode.mm in Sources */,
+				AB3C6D84124C4094007D8C4A /* PVRTexture.m in Sources */,
+				AB3C6D85124C4094007D8C4A /* Texture2D.mm in Sources */,
+				AB3C6D86124C4094007D8C4A /* vrTexturePool.mm in Sources */,
+				AB3C6D89124C40ED007D8C4A /* glUtility.mm in Sources */,
+				AB3C6D96124C42A7007D8C4A /* NSString+ordinal.m in Sources */,
+				AB3C6D97124C42A7007D8C4A /* NSString+timeString.m in Sources */,
+				AB3C6D98124C42A7007D8C4A /* NSString+vectorParse.mm in Sources */,
+				AB3C6DB1124C439D007D8C4A /* qrPiece.mm in Sources */,
+				AB105CA1124D1D2400B1A777 /* qrAppController.mm in Sources */,
+				AB105F74124D94D100B1A777 /* qrGeometryGlobals.mm in Sources */,
+				AB1C6A6B124E6BF00046A796 /* qrPiecePickerView.mm in Sources */,
+				AB1C6A6E124E6D560046A796 /* qrOrthoView.mm in Sources */,
+				AB1C6A75124E75670046A796 /* qrPieceView.mm in Sources */,
+				AB1C6A89124E977C0046A796 /* qrGameScreen.mm in Sources */,
+				ABDCF8F51251054300A23E02 /* vrButton.mm in Sources */,
+				ABDCF8F61251054300A23E02 /* vrControl.mm in Sources */,
+				ABDCF8F71251054300A23E02 /* vrUIControl.mm in Sources */,
+				ABDCF9EB12511E1900A23E02 /* vrTextBox.mm in Sources */,
+				ABDCF9EC12511E1900A23E02 /* vrSliderControl.mm in Sources */,
+				ABDCFA0012511E7700A23E02 /* vrUIElement.mm in Sources */,
+				ABDCFA151251427400A23E02 /* qrAIMove.mm in Sources */,
+				AB307B3E1252786400E9ABB6 /* qrGameState.mm in Sources */,
+				AB307BC51252998800E9ABB6 /* qrHomeScreen.mm in Sources */,
+				AB307CA51252BD9400E9ABB6 /* qrAnimation.mm in Sources */,
+				AB56FC441253E940001F8FC8 /* qrGameTextureController.m in Sources */,
+				AB56FE1E12553555001F8FC8 /* qrScreen.mm in Sources */,
+				AB56FE1F125539C3001F8FC8 /* vrModalDialog.mm in Sources */,
+				AB56FE2212553ACF001F8FC8 /* qrViewController.mm in Sources */,
+				AB56FE9212555085001F8FC8 /* qrSinglePlayerGameScreen.mm in Sources */,
+				AB56FE95125552D4001F8FC8 /* vrTransitionHandler.mm in Sources */,
+				AB8AB642125A443600D33F8B /* qrMultiPlayerSessonController.mm in Sources */,
+				AB8AB65A125A481C00D33F8B /* qrMPGameScreen.mm in Sources */,
+				AB8AB82B125A960A00D33F8B /* qrNetworkMove.mm in Sources */,
+				AB8ABB88125D0F7500D33F8B /* qrGameStats.mm in Sources */,
+				AB8ABBB9125D525600D33F8B /* qrStatsScreen.mm in Sources */,
+				AB0ACCFE1261189C007524FA /* qrInstructionsScreen.mm in Sources */,
+				AB6291D91379ABE30070AC60 /* Matrix.mm in Sources */,
+				AB6291DA1379ABE30070AC60 /* neon_matrix_impl.mm in Sources */,
+				AB6291DC1379ABE30070AC60 /* Transform.mm in Sources */,
+				AB6291DD1379ABE30070AC60 /* Vector.mm in Sources */,
+				AB6291DE1379ABE30070AC60 /* matrix_impl.mm in Sources */,
+				AB6291DF1379ABE30070AC60 /* utility_impl.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Quarto_Prefix.pch;
+				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				INFOPLIST_FILE = "Quarto-Info.plist";
+				PRODUCT_NAME = Quarto;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB38F31012666B200025A306 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Distribution;
+		};
+		AB38F31112666B200025A306 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Quarto_Prefix.pch;
+				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				INFOPLIST_FILE = "Quarto-Info.plist";
+				PRODUCT_NAME = Quarto;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
+		ABDCF8A31250FF7400A23E02 /* Debug - iPhone (4.0) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jonathan Nobels (2R6PP3646N)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "66EE5E2D-5061-4C5C-86AE-DDAE7307B3FB";
+				SDKROOT = iphoneos4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug - iPhone (4.0)";
+		};
+		ABDCF8A41250FF7400A23E02 /* Debug - iPhone (4.0) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Quarto_Prefix.pch;
+				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				INFOPLIST_FILE = "Quarto-Info.plist";
+				PRODUCT_NAME = Quarto;
+			};
+			name = "Debug - iPhone (4.0)";
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Quarto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABDCF8A41250FF7400A23E02 /* Debug - iPhone (4.0) */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+				AB38F31112666B200025A306 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Quarto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABDCF8A31250FF7400A23E02 /* Debug - iPhone (4.0) */,
+				C01FCF5008A954540054247B /* Release */,
+				AB38F31012666B200025A306 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

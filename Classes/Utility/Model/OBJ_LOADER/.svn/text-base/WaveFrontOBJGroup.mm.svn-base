@@ -1,0 +1,433 @@
+//
+//  WaveFrontOBJGroup.m
+//  OpenGLBricks
+//
+//  Created by Bill Dudney on 12/20/08.
+//  Copyright 2008 Gala Factory Software LLC. All rights reserved.
+//
+
+#import "WaveFrontOBJGroup.h"
+#import "WaveFrontOBJTexture.h"
+#import "glUtility.h"
+
+
+@implementation WaveFrontOBJGroup
+
+@synthesize smoothing;
+@synthesize names;
+@synthesize vertexIndexData;
+@synthesize normalsIndexData;
+@synthesize textureCoordinatesIndexData;
+@synthesize material;
+
+- (id)init {
+	self = [super init];
+	if(nil != self) {
+		vertexIndexData = [[NSMutableData alloc] init];
+		normalsIndexData = [[NSMutableData alloc] init];
+		textureCoordinatesIndexData = [[NSMutableData alloc] init];
+		vertexData = [[NSMutableData alloc] init];
+		normalsData = [[NSMutableData alloc] init];
+		texCoordsData = [[NSMutableData alloc] init];
+		instanceVBOs = [[NSMutableDictionary alloc] init];
+	}
+	return self;
+}
+
+
+- (NSUInteger)indexCount {
+	return [vertexIndexData length] / sizeof(GLshort);
+}
+
+- (GLuint)texCoordSize { 
+	return sizeof(Vector2D);
+}
+
+
+- (void)addVertex:(Vector3D)vertex atIndex:(GLshort)index {
+	[self addVertexIndex:(GLshort)([vertexData length] / sizeof(Vector3D))];
+	[self addVertex:vertex];
+}
+
+- (void)addNormal:(Vector3D)normal atIndex:(GLshort)index {
+	[self addNormalIndex:(GLshort)([normalsData length] / sizeof(Vector3D))];
+	[self addNormal:normal];
+}
+
+- (void)addTexCoord:(Vector2D)coord atIndex:(GLshort)index {
+	[self addTextureCoordinateIndex:(GLshort)([texCoordsData length] / sizeof(Vector2D))];
+	[self addTextureCoordinate:coord];
+}
+
+- (void)addVertexIndex:(GLshort)index {
+	[vertexIndexData appendBytes:&index length:sizeof(GLshort)];
+}
+
+- (void)addNormalIndex:(GLshort)index {
+	[normalsIndexData appendBytes:&index length:sizeof(GLshort)];
+}
+
+- (void)addTextureCoordinateIndex:(GLshort)index {
+	[textureCoordinatesIndexData appendBytes:&index length:sizeof(GLshort)];
+}
+
+- (void)addVertex:(Vector3D)vertex {
+	[vertexData appendBytes:&vertex length:sizeof(Vector3D)];
+}
+
+- (void)addNormal:(Vector3D)vertex {
+	[normalsData appendBytes:&vertex length:sizeof(Vector3D)];
+}
+
+- (void)addTextureCoordinate:(Vector2D)coord {
+	[texCoordsData appendBytes:&coord length:sizeof(Vector2D)];
+}
+
+-(int)faceCount{
+	return faceCount;
+}
+
+
+// this loads the data via glBindBuffer if its not already bound
+// if the index is already bound, usage is ignored
+- (GLuint)indexesName:(GLenum)usage { // the VBO for the indexes
+
+	if(0 == indexesName) {
+		sortedIndexData = (void*)vertexIndexData.bytes;
+		faceCount =  vertexIndexData.length / 3;
+		
+		//sortedIndexData = (GLshort*)malloc(vertexIndexData.length);
+		//memcpy((void*)sortedIndexData, (void*)vertexIndexData.bytes, vertexIndexData.length);
+		//NSLog(@"Generating Sorted Index List. Face Count: %d",faceCount);
+		//if(faceCount < 700)TriStripList((unsigned short*)sortedIndexData, faceCount );
+
+		glGenBuffers(1, &indexesName);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexesName);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, vertexIndexData.length, 
+					 sortedIndexData, usage);
+	}
+	return indexesName;
+}
+
+/*
+
+- (GLuint)verticesName:(GLenum)usage { // the VBO for the vertices
+	if(0 == verticesName) {
+		glGenBuffers(1, &verticesName);
+		glBindBuffer(GL_ARRAY_BUFFER, verticesName);
+		glBufferData(GL_ARRAY_BUFFER, vertexData.length, 
+					 vertexData.bytes, usage);
+	}
+	return verticesName;
+}
+
+- (GLuint)normalsName:(GLenum)usage { // the VBO for the normals
+	if(0 == normalsName) {
+		glGenBuffers(1, &normalsName);
+		glBindBuffer(GL_ARRAY_BUFFER, normalsName);
+		glBufferData(GL_ARRAY_BUFFER, normalsData.length,
+					 normalsData.bytes, usage);
+	}
+	return normalsName;
+}
+
+ - (GLuint)textureCoordinatesName:(GLenum)usage {// the VBO for the texture coords
+	if(0 == textureCoordsName && texCoordsData.length > 0) {
+		glGenBuffers(1, &textureCoordsName);
+		glBindBuffer(GL_ARRAY_BUFFER, textureCoordsName);
+		glBufferData(GL_ARRAY_BUFFER, texCoordsData.length,
+					 texCoordsData.bytes, usage);
+	}
+	return textureCoordsName;
+}
+
+*/ 
+ 
+-(void)releaseVBOWithID:(GLuint)instanceID
+{
+	NSString *vboNameKey = [NSString stringWithFormat:@"%d",instanceID];
+	NSNumber *instanceVBOName = [instanceVBOs objectForKey:vboNameKey];
+	if(instanceVBOName){
+		GLuint vbo = [[instanceVBOs objectForKey:vboNameKey] intValue];
+		glDeleteBuffers(1, &vbo);
+		return;
+	}
+	else{
+		NSLog(@"VBO Delete Failed. VBO With Instance ID:%d Not Found",instanceID);
+	}
+}
+
+-(void)releaseAllInstances
+{
+	for(NSString *key in instanceVBOs){
+		GLuint vbo = [[instanceVBOs objectForKey:key] intValue];
+		glDeleteBuffers(1, &vbo);
+	}	
+}
+
+
+-(GLuint)vboNameForInstance:(GLuint)instanceID 
+{
+	NSString *vboNameKey = [NSString stringWithFormat:@"%d",instanceID];
+	NSNumber *instanceVBOName = [instanceVBOs objectForKey:vboNameKey];
+	if(instanceVBOName){
+		GLuint vbo = [[instanceVBOs objectForKey:vboNameKey] intValue];
+		return vbo;
+	}
+	else {
+		NSLog(@"VBO Request Failed. VBO With Instance ID:%d Not Found",instanceID);
+	}
+	return 0;
+}
+
+-(void)createTransformedVBOwithID:(GLuint)instanceID translation:(Vector3D)translation rotate:(Vector3D)rotation{
+	if(!vboName)[self vboName:GL_STATIC_DRAW];
+	
+	
+	NSLog(@"Generating Transformed VBO With InstanceID: %d",instanceID);
+	//NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
+	GLuint vboSize = vertexData.length+normalsData.length+texCoordsData.length;
+	NSMutableData *tVertexData = [[NSMutableData alloc] initWithCapacity:vertexData.length];
+	NSMutableData *tNormalsData = [[NSMutableData alloc] initWithCapacity:normalsData.length];
+	
+	//Transform the Vertices
+	
+	Vector3D vertex;
+	Vector3D newVertex;
+	NSRange range; 
+	
+	for(uint i=0;i<vertexData.length;i+=3*sizeof(GLfloat))
+	{
+		range.location = i;
+		range.length = 3*sizeof(GLfloat);
+		[vertexData getBytes:&vertex range:range];
+		
+		//2D rotation around Z only for now!
+		//float r = sqrtf(vertex.x*vertex.x + vertex.y*vertex.y);
+		
+		GLfloat x			= vertex.x;
+		GLfloat y			= vertex.y;
+		GLfloat z			= vertex.z;
+		GLfloat cosine		= cosf(rotation.z);
+		GLfloat sine		= sinf(rotation.z);
+		
+		newVertex.x = (x*cosine + y*sine) + translation.x;
+		newVertex.y = (-x*sine + y*cosine) + translation.y;
+		newVertex.z = z + translation.z;
+		[tVertexData appendBytes:&newVertex	length:3*sizeof(GLfloat)];
+	}
+	
+	//Transform the Normals
+	
+	for(uint i=0;i<normalsData.length;i+=3*sizeof(GLfloat))
+	{
+		range.location = i;
+		range.length = 3*sizeof(GLfloat);
+		[normalsData getBytes:&vertex range:range];
+		
+		//2D rotation around Z only for now!
+		
+		GLfloat x			= vertex.x;
+		GLfloat y			= vertex.y;
+		GLfloat z			= vertex.z;
+		GLfloat cosine		= cosf(rotation.z);
+		GLfloat sine		= sinf(rotation.z);
+		
+		newVertex.x = (x*cosine + y*sine) + translation.x;
+		newVertex.y = (-x*sine + y*cosine) + translation.y;
+		newVertex.z = z + translation.z;
+		[tNormalsData appendBytes:&newVertex length:3*sizeof(GLfloat)];
+	}
+	
+	WaveFrontOBJTexture *texture = [self.material textureForKey:@"default"];
+	BOOL isAtlas = [texture isAtlas];
+	//Create Interleaved VBO.  Vertex-Normal-Texture
+	
+	GLfloat uSize = 1.0f, vSize = 1.0f;
+	GLfloat	uOffset = 0.0f, vOffset = 0.0f;
+	
+	if(isAtlas){
+		uSize = texture.uSize;
+		vSize = texture.vSize;
+		uOffset = texture.uOffset;
+		vOffset = texture.vOffset;
+	}
+	
+	//Alloc a new buffer for the vboData.
+	vboData = (char *)malloc(vboSize);
+	uint vIndex = 0, nIndex = 0, tIndex = 0;
+	Vector3D n;		//Normal
+	Vector3D v;		//Vertex
+	Vector2D t;		//Texture
+	
+	int vLen = sizeof(Vector3D);
+	
+	//Check for texture data... If none, set size of UV to zero.
+	int tLen = 0;
+	if(texCoordsData.length > 0)tLen = sizeof(Vector2D);
+	
+	//Copy the data to our new buffer
+	for(uint i=0; i<vboSize; i+=(vLen + vLen + tLen))
+	{
+		NSRange vRange = {vIndex, vLen };
+		NSRange nRange = {nIndex, vLen };
+		
+		vIndex += vLen;
+		nIndex += vLen;
+		
+		[tVertexData getBytes:&v range:vRange];
+		[tNormalsData getBytes:&n range:nRange];
+		
+		memcpy((vboData+i), &v, vLen);
+		memcpy((vboData+i+vLen), &n, vLen);
+		
+		if(texCoordsData.length > 0){
+			//TODO: If we're using an atlassed texture, modify the UV values here.
+			
+			NSRange tRange = {tIndex, tLen };
+			tIndex += tLen;
+			[texCoordsData getBytes:&t range:tRange];
+			
+			if(isAtlas){
+				t.x = t.x*uSize + uOffset; 
+				t.y = t.y*vSize + vOffset;
+			}
+			memcpy((vboData+i+2*vLen), &t, tLen); 
+		}	
+	}
+		
+	glGenBuffers(1, &vboName);
+	glBindBuffer(GL_ARRAY_BUFFER, vboName);
+	glBufferData(GL_ARRAY_BUFFER, vboSize, vboData, GL_STATIC_DRAW);
+	
+	vboParam.stride = vLen + tLen + vLen;
+	
+	NSString *vboNameKey = [NSString stringWithFormat:@"%d",instanceID];
+	NSNumber *instanceVBOName = [NSNumber numberWithInt:vboName];
+	[instanceVBOs setObject:instanceVBOName forKey:vboNameKey]; 
+	
+	[tVertexData release];
+	[tNormalsData release];
+	glFinish();
+	free(vboData);
+}	
+
+- (GLuint)vboName:(GLenum)usage {  //VBO for the works
+	
+	if(0 == vboName) {
+		GLuint vboSize = vertexData.length+normalsData.length+texCoordsData.length;
+		
+		//TODO: Check Material.Texture to see if it's located in an Atlas
+		WaveFrontOBJTexture *texture = [self.material textureForKey:@"default"];
+		BOOL isAtlas = [texture isAtlas];
+		//Create Interleaved VBO.  Vertex-Normal-Texture
+		
+		GLfloat uSize = 1, vSize = 1;
+		GLfloat	uOffset = 0, vOffset = 0;
+		
+		if(isAtlas){
+			uSize = texture.uSize;
+			vSize = texture.vSize;
+			uOffset = texture.uOffset;
+			vOffset = texture.vOffset;
+		}
+		
+		//Alloc a new buffer for the vboData.
+		vboData = (char *)malloc(vboSize);
+		uint vIndex = 0, nIndex = 0, tIndex = 0;
+		Vector3D n;		//Normal
+		Vector3D v;		//Vertex
+		Vector2D t;		//Texture
+		
+		int vLen = sizeof(Vector3D);
+		
+		//Check for texture data... If none, set size of UV to zero.
+		int tLen = 0;
+		if(texCoordsData.length > 0)tLen = sizeof(Vector2D);
+		
+		//Copy the data to our new buffer
+		for(uint i=0; i<vboSize; i+=(vLen + vLen + tLen))
+		{
+			NSRange vRange = {vIndex, vLen };
+			NSRange nRange = {nIndex, vLen };
+			
+			vIndex += vLen;
+			nIndex += vLen;
+			
+			[vertexData getBytes:&v range:vRange];
+			[normalsData getBytes:&n range:nRange];
+			
+						
+			memcpy((vboData+i), &v, vLen);
+			memcpy((vboData+i+vLen), &n, vLen);
+			
+			if(texCoordsData.length > 0){
+				//TODO: If we're using an atlassed texture, modify the UV values here.
+				
+				NSRange tRange = {tIndex, tLen };
+				tIndex += tLen;
+				[texCoordsData getBytes:&t range:tRange];
+				
+				if(isAtlas){
+					t.x = t.x*uSize + uOffset; 
+					t.y = t.y*vSize + vOffset;
+				}
+				
+				memcpy((vboData+i+2*vLen), &t, tLen); 
+			}	
+		}
+		
+		
+		glGenBuffers(1, &vboName);
+		glBindBuffer(GL_ARRAY_BUFFER, vboName);
+		glBufferData(GL_ARRAY_BUFFER, vboSize, vboData, usage);
+		
+		vboParam.stride = vLen + tLen + vLen;
+		
+		glFinish();
+		free(vboData);
+		
+		//Release the original data set... It's all in vboData now
+		//[vertexData release];
+		//[normalsData release];
+		//[texCoordsData release];
+		
+	}
+	return vboName;
+}
+
+
+- (glVBOParam)vboParam {
+	return vboParam;
+	
+}
+
+-(void)dealloc {
+	if(vboName)glDeleteBuffers(1, &vboName);
+	if(indexesName)glDeleteBuffers(1, &indexesName);
+	
+	[self releaseAllInstances];
+	
+	[vertexIndexData release];
+    [normalsIndexData release];
+    [textureCoordinatesIndexData release];
+    
+	//if(!vboData){
+		[vertexData release];
+		[normalsData release];
+		[texCoordsData release];
+	//} else {
+	//if(vboData)free(vboData);
+	//}
+	
+	[instanceVBOs release];
+	[material release];
+	[names release];
+	
+	//free(sortedIndexData);
+	[super dealloc];
+}
+
+
+@end

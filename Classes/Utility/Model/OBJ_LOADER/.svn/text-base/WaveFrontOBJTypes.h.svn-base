@@ -1,0 +1,63 @@
+//
+//  WaveFrontOBJTypes.h
+//  OpenGLBricks
+//
+//  Created by Bill Dudney on 12/19/08.
+//  Copyright 2008 Gala Factory Software LLC. All rights reserved.
+//
+
+#import <OpenGLES/EAGL.h>
+#import <OpenGLES/ES1/gl.h>
+#import <OpenGLES/ES1/glext.h>
+#import "OpenGLCommon.h"
+
+
+typedef struct {
+	GLuint  stride;
+	GLuint  vertOffset;
+	GLuint  textOffset;
+	GLuint  normOffset;
+} glVBOParam;
+
+typedef struct {
+  GLfloat red;
+  GLfloat green;
+  GLfloat blue;
+  GLfloat alpha;
+} ColorRGBA;
+
+typedef struct {
+  GLfloat red;
+  GLfloat green;
+  GLfloat blue;
+} ColorRGB;
+
+
+/*
+typedef struct {
+  GLfloat x;
+  GLfloat y;
+  GLfloat z;
+} Vector3D;
+*/
+typedef struct {
+  GLuint count; // always 1
+  GLfloat u;
+} TextureCoord1D;
+
+typedef struct {
+  GLuint count; // always 2
+  GLfloat u;
+  GLfloat v;
+} TextureCoord2D;
+
+typedef struct {
+  GLuint count; // always 3
+  GLfloat u;
+  GLfloat v;
+  GLfloat w;
+} TextureCoord3D;
+
+void ReleaseTextureCoord(CFAllocatorRef allocator, const void *value);
+const void * RetainTextureCoord(CFAllocatorRef allocator, const void *value);
+CFStringRef TextureCoordDescription (const void *value);

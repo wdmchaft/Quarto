@@ -1,0 +1,7 @@
+#/bin/bash
+cd "/Users/Jonathan/Desktop/iPhone Projects/Quarto/UITextures"
+LIST='ls *.png'
+for i in $LIST ;
+do
+/CLTools/texturetool -e PVRTC -f PVR -m --channel-weighting-perceptual --bits-per-pixel-4 -o "$i.pvrtc" "$i"
+done

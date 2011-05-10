@@ -1,0 +1,374 @@
+//
+//  WaveFrontOBJMaterial.m
+//  OpenGLBricks
+//
+//  Created by Bill Dudney on 12/19/08.
+//  Copyright 2008 Gala Factory Software LLC. All rights reserved.
+//
+
+#import "WaveFrontOBJMaterial.h"
+#import "WaveFrontOBJTexture.h"
+
+#define kNoLineType 0
+#define kMaterialNameLineType 5
+#define kAmbientLineType 10
+#define kDiffuseLineType 15
+#define kSpecularLineType 20
+#define kTransmitLineType 25
+#define kIlluminationModelLineType 30
+#define kDisolveLineType 35
+#define kShineLineType 40
+#define kSharpnessLineType 45
+#define kRefractionIndexLineType 50
+#define kTextureMapAmbientLineType 55
+#define kTextureMapDiffuseLineType 60
+#define kTextureMapSpecularLineType 65
+#define kTextureMapShineLineType 70
+#define kTextureMapDisolveLineType 75
+#define kTextureMapDisplacementLineType 80
+#define kTextureMapDecalLineType 85
+#define kTextureMapBumpLineType 90
+#define kTextureMapAlternateType 95
+
+@implementation WaveFrontOBJMaterial
+
+@synthesize name;
+@synthesize ambientColor;
+@synthesize diffuseColor;
+@synthesize specularColor;
+@synthesize transmittedColor;
+@synthesize shine;
+@synthesize illumination;
+@synthesize disolve;
+@synthesize sharpness;
+@synthesize refractionIndex;
+
++ (NSUInteger)_lineType:(NSString *)line {
+	NSUInteger type = kNoLineType;
+	NSRange typeRange = [line rangeOfString:@"newmtl " options:NSLiteralSearch 
+									  range:NSMakeRange(0, [line length])];
+	if(typeRange.location == 0) {
+		type = kMaterialNameLineType;
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"Ka " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kAmbientLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"Kd " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kDiffuseLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"Ks " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kSpecularLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"Tf " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kTransmitLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"illum " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kIlluminationModelLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"d " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kDisolveLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"Ns " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kShineLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"sharpness " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kSharpnessLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"Ni " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kRefractionIndexLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"map_Ka " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kTextureMapAmbientLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"map_Kd " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kTextureMapDiffuseLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"map_Alt " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kTextureMapAlternateType;
+		}
+	}
+	
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"map_Ks " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kTextureMapSpecularLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"map_Ns " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kTextureMapShineLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"map_d " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kTextureMapDisolveLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"disp " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kTextureMapDisplacementLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"decal " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kTextureMapDecalLineType;
+		}
+	}
+	
+	if(type == kNoLineType) {
+		typeRange = [line rangeOfString:@"bump " options:NSLiteralSearch range:NSMakeRange(0, [line length])];
+		if(typeRange.location == 0) {
+			type = kTextureMapBumpLineType;
+		}
+	}
+	
+	return type;
+}
+
++ (ColorRGBA)_colorFromLine:(NSString *)line {
+	NSScanner *scan = [NSScanner scannerWithString:line];
+	[scan setScanLocation:2]; // skip to the #'s
+	ColorRGBA color;
+	[scan scanFloat:&color.red];
+	[scan scanFloat:&color.green];
+	[scan scanFloat:&color.blue];
+	color.alpha = 1.0;
+	return color;
+}
+
++ (NSArray *)_loadData:(NSString *)data {
+	NSMutableArray *materials = [NSMutableArray array];
+	// pull all the data out of the file which was sucked into the string called
+	// data
+	NSRange range = NSMakeRange(0, 0);
+	NSRange lineRange;
+	WaveFrontOBJMaterial *material = nil;
+	while(range.location != NSNotFound && range.location < [data length]) {
+		NSUInteger start = 0;
+		NSUInteger end = 0;
+		NSUInteger contentEnd = 0;
+		[data getLineStart:&start end:&end contentsEnd:&contentEnd forRange:range];
+		lineRange.location = start;
+		lineRange.length = end - start;
+		range.location = end + 1;
+		NSString *line = [data substringWithRange:lineRange];
+
+		NSUInteger lineType = [self _lineType:line];
+		switch (lineType) {
+			case kMaterialNameLineType: {
+				if(nil != material) {
+					[materials addObject:material];
+					[material release];
+				}
+				material = [[WaveFrontOBJMaterial alloc] init];
+				NSRange range = NSMakeRange(7, [line length] - 8);
+				material.name = [line substringWithRange:range];
+				break;
+			}
+			case kAmbientLineType: {
+				material.ambientColor = [self _colorFromLine:line];
+				break;
+			}
+			case kDiffuseLineType: {
+				material.diffuseColor = [self _colorFromLine:line];
+				break;
+			}
+			case kSpecularLineType: {
+				material.specularColor = [self _colorFromLine:line];
+				break;
+			}
+			case kTransmitLineType: {
+				material.transmittedColor = [self _colorFromLine:line];
+				break;
+			}
+			case kShineLineType: {
+				NSScanner *scan = [NSScanner scannerWithString:line];
+				[scan setScanLocation:3]; // skip to the #'s
+				GLfloat shine = 0.0;
+				if([scan scanFloat:&shine]) {
+					material.shine = shine;
+				}
+				break;
+			}
+			case kDisolveLineType: {
+				NSScanner *scan = [NSScanner scannerWithString:line];
+				[scan setScanLocation:3]; // skip to the #'s
+				GLfloat disolve = 0.0;
+				if([scan scanFloat:&disolve]) {
+					material.disolve = disolve;
+				}
+				break;
+			}
+			case kIlluminationModelLineType: {
+				NSScanner *scan = [NSScanner scannerWithString:line];
+				[scan setScanLocation:3]; // skip to the #'s
+				GLuint illumination = 0;
+				if([scan scanInt:(int*)&illumination]) {
+					material.illumination = illumination;
+				}
+				break;
+			}
+			case kSharpnessLineType: {
+				NSScanner *scan = [NSScanner scannerWithString:line];
+				[scan setScanLocation:3]; // skip to the #'s
+				GLfloat sharpness = 0.0;
+				if([scan scanFloat:&sharpness]) {
+					material.sharpness = sharpness;
+				}
+				break;
+			}
+			case kRefractionIndexLineType: {
+				NSScanner *scan = [NSScanner scannerWithString:line];
+				[scan setScanLocation:3]; // skip to the #'s
+				GLfloat refractionIndex = 0.0;
+				if([scan scanFloat:&refractionIndex]) {
+					material.refractionIndex = refractionIndex;
+				}
+				break;
+			}
+			case kTextureMapDiffuseLineType: {
+				WaveFrontOBJTexture *diffuse = [[WaveFrontOBJTexture alloc] init];
+				NSRange range = NSMakeRange(7, [line length] - 8);
+				diffuse.name = [line substringWithRange:range];
+				[[material textures] setObject:diffuse forKey:@"default"];
+				//Load the texture file so that the UV offsets are properly set
+				[diffuse textureName];
+				[diffuse release];
+				break;
+			}
+
+		}
+	}
+	if(nil != material) {
+		[materials addObject:material];
+		[material release];
+	}
+	
+	return [NSArray arrayWithArray:materials];
+}
+
++ (NSArray *)materialsFromLibraryFile:(NSString *)fileName {
+	NSString *resourceName	= [fileName lastPathComponent];
+	NSString *extension		= [resourceName pathExtension];
+	NSUInteger end			= resourceName.length - extension.length - 1;
+	NSString *imageName		= [resourceName substringToIndex:end];
+	NSString *path			= [[NSBundle mainBundle] pathForResource:imageName
+													   ofType:extension];
+	NSURL *url				= [NSURL fileURLWithPath:path];
+	NSString *data			= [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:NULL];
+	return [self _loadData:data];
+}
+
+- (NSString*)textureFile
+{
+	WaveFrontOBJTexture *t = [textures objectForKey:@"default"];
+	return [t textureFile];
+}
+
+
+-(GLuint)textureName{
+	return  [[textures objectForKey:@"default"] textureName];
+}
+
+- (NSMutableDictionary *)textures{
+	return textures;
+}
+
+- (GLuint)textureIDForKey:(NSString *)key
+{
+	//Check if the key'd texture exists and return its ID
+	WaveFrontOBJTexture *texture = [textures objectForKey:key];
+	if(texture)return texture.textureName;
+	
+	//No key'd texure found - return the default.
+	texture = [textures objectForKey:@"default"];
+	if(texture)return texture.textureName;
+	
+	return 0;
+}
+
+- (WaveFrontOBJTexture*)textureForKey:(NSString *)key
+{
+	WaveFrontOBJTexture *texture = [textures objectForKey:key];
+	if(texture){
+		return texture;
+	}
+	else{
+		return [textures objectForKey:@"default"];
+	}
+	return NULL;
+}
+
+
+- (id)init {
+	self = [super init];
+	if(nil != self) {
+		textures = [[NSMutableDictionary alloc] init];
+	}
+	return self;
+}
+
+-(void)dealloc {
+	[fileName release];
+	[name release];
+	[textures release];
+	[super dealloc];
+}
+
+@end

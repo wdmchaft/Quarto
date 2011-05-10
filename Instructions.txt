@@ -1,0 +1,33 @@
+## ## denotes a comment
+## p> denotes a new page
+## l> denotes a line of text
+## line format is <size>;<Text>
+
+p>
+l>14;Quarto is played on a 4x4 board. There
+l>14;are 16 pieces, each of which has four
+l>14;attributes:
+l>11;   Tall or Short
+l>11;   Round or Square
+l>11;   Dark or Light
+l>11;   Flat or Hollow
+p>
+l>14;Players take turns selecting any of
+l>14;the available pieces.  Once a piece is
+l>14;selected, the player gives the piece to
+l>14;his/her opponent who plays it in any of
+l>14;the available positions on the board. 
+p>
+l>14;The winning player is the first player
+l>14;to create a row or diagonal which
+l>14;contains any four pieces that share a 
+l>14;common attribute. (ie: 4 dark pieces or
+l>14;4 short pieces, 4 round pieces, etc).
+p>
+l>14;The winning player need not have played
+l>14;all four of the winning pieces.  He/she 
+l>14;need only to place the final piece.  
+l>14;Sounds easy?  Good luck!
+l>14; 
+l>14;Enjoy!
+l>14;   The Barn*Star Team

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Select</key>
+	<string>sound84.wav</string>
+	<key>Place</key>
+	<string>sound61.wav</string>
+	<key>ButtonPress</key>
+	<string>click_2.wav.caf</string>
+	<key>WinSound</key>
+	<string>chimes.caf</string>
+	<key>Clear</key>
+	<string>sound88.wav</string>
+</dict>
+</plist>
